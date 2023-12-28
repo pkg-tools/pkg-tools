@@ -16,7 +16,7 @@ async function formatFile(inputFilePath: string, outputFilePath: string) {
   const fileContent = await readFile(inputFilePath);
   const prettierConfig = await prettier.resolveConfig(inputFilePath);
   const start = Date.now();
-  const formatted = prettier.format(fileContent, {
+  const formatted = await prettier.format(fileContent, {
     ...prettierConfig,
     filepath: inputFilePath,
   });

@@ -25,10 +25,10 @@
     "build": "unbuild",
     "clean": "shx rm -rf ./dist",
     "dev": "unbuild --stub",
-    "format": "prettier --w .",
-    "formatcheck": "pnpm exec check-formatting",
+    "format": "prettier -w .",
+    "formatcheck": "prettier -c .",
     "lint": "eslint .",
-    "test": "jest",
+    "test": "echo \"@pkg-tools/clean does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/clean\""
@@ -40,23 +40,18 @@
   "dependencies": {
     "citty": "0.1.2",
     "consola": "3.1.0",
-    "shelljs": "0.8.5",
-    "unbuild": "2.0.0"
+    "shelljs": "0.8.5"
   },
   "devDependencies": {
-    "@dopt/check-formatting": "1.0.0",
     "@dopt/config": "1.1.0",
-    "@types/jest": "29.5.2",
-    "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.12",
     "@typescript-eslint/eslint-plugin": "5.59.11",
     "@typescript-eslint/parser": "5.59.11",
     "eslint": "8.42.0",
     "eslint-plugin-react": "7.32.2",
-    "jest": "29.5.0",
-    "prettier": "2.8.8",
+    "prettier": "3.1.1",
     "shx": "0.3.4",
-    "typescript": "5.1.6"
-  },
-  "openSource": true
+    "typescript": "5.3.3",
+    "unbuild": "2.0.0"
+  }
 }

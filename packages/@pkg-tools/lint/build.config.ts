@@ -7,7 +7,6 @@ export default defineBuildConfig({
     inlineDependencies: true,
     esbuild: {
       target: 'ESNext',
-      jsx: 'automatic',
       minify: true,
     },
   },

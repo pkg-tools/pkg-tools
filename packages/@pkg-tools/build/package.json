@@ -23,12 +23,12 @@
   "scripts": {
     "👇required package scripts": "",
     "build": "unbuild",
-    "clean": "pkg-clean",
-    "dev": "pkg-build -s",
-    "format": "pkg-format",
-    "formatcheck": "pkg-format -c",
-    "lint": "pkg-lint",
-    "test": "echo \"@dopt/please has no unit tests\"; exit 0;",
+    "clean": "shx rm -rf ./dist",
+    "dev": "unbuild --stub",
+    "format": "prettier --w .",
+    "formatcheck": "prettier -c .",
+    "lint": "eslint .",
+    "test": "echo \"@pkg-tools/lint does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/build\""
@@ -47,12 +47,12 @@
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
-    "@dopt/pkg-clean": "1.0.0",
-    "@dopt/pkg-format": "0.0.0",
-    "@dopt/pkg-lint": "1.0.0",
+    "eslint": "8.42.0",
     "@types/node": "18.16.18",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@types/nodemon": "^1.19.6",
+    "@typescript-eslint/eslint-plugin": "5.59.11",
+    "@typescript-eslint/parser": "5.59.11",
+    "prettier": "3.1.1",
     "typescript": "5.3.3"
-  },
-  "openSource": true
+  }
 }
