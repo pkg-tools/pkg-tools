@@ -23,12 +23,12 @@
   "scripts": {
     "👇required package scripts": "",
     "build": "unbuild",
-    "clean": "shx rm -rf ./dist",
-    "dev": "unbuild --stub",
-    "format": "prettier --w .",
-    "formatcheck": "pnpm exec check-formatting",
-    "lint": "eslint .",
-    "test": "jest",
+    "clean": "pkg-clean",
+    "dev": "pkg-build -s",
+    "format": "pkg-format",
+    "formatcheck": "pkg-format -c",
+    "lint": "pkg-lint",
+    "test": "echo \"@dopt/please has no unit tests\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/build\""
@@ -46,19 +46,13 @@
     "unbuild": "2.0.0"
   },
   "devDependencies": {
-    "@dopt/check-formatting": "1.0.0",
     "@dopt/config": "1.1.0",
-    "@types/jest": "29.5.2",
-    "@types/minimist": "1.2.2",
-    "@types/nodemon": "1.19.2",
-    "@typescript-eslint/eslint-plugin": "5.59.11",
-    "@typescript-eslint/parser": "5.59.11",
-    "eslint": "8.42.0",
-    "eslint-plugin-react": "7.32.2",
-    "jest": "29.5.0",
-    "prettier": "2.8.8",
-    "shx": "0.3.4",
-    "typescript": "5.1.6"
+    "@dopt/pkg-clean": "1.0.0",
+    "@dopt/pkg-format": "0.0.0",
+    "@dopt/pkg-lint": "1.0.0",
+    "@types/node": "18.16.18",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "typescript": "5.3.3"
   },
   "openSource": true
 }

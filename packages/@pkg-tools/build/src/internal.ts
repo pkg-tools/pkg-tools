@@ -1,15 +1,15 @@
-import { BuildConfig, defineBuildConfig } from 'unbuild';
+import { BuildConfig, defineBuildConfig } from "unbuild";
 
 export function node(options: BuildConfig) {
   return defineBuildConfig({
-    entries: ['src/index'],
+    entries: ["src/index"],
     clean: false,
     rollup: {
       inlineDependencies: true,
       emitCJS: true,
       ...options.rollup,
       esbuild: {
-        target: 'ESNext',
+        target: "ESNext",
         minify: true,
         ...options.rollup?.esbuild,
       },

@@ -1,8 +1,8 @@
-import { BuildHooks } from 'unbuild';
+import { BuildHooks } from "unbuild";
 
-import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
+import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
 
-type Props = Parameters<BuildHooks['rollup:options']>;
+type Props = Parameters<BuildHooks["rollup:options"]>;
 
 export function transformVanillaExtractExtensions(
   _: Props[0],
@@ -17,9 +17,9 @@ export function transformVanillaExtractExtensions(
     for (const outputOptions of options.output) {
       outputOptions.assetFileNames = ({ name }) => {
         const fileName = name
-          ?.replace(/^src.*\//, '')
-          .replace(/\.css\.ts\.vanilla.css$/, '.css');
-        return fileName || '';
+          ?.replace(/^src.*\//, "")
+          .replace(/\.css\.ts\.vanilla.css$/, ".css");
+        return fileName || "";
       };
     }
   }

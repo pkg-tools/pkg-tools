@@ -1,4 +1,4 @@
-## @dopt/pkg-build
+## @pkg-tools/build
 
 A CLI for building packages.
 
@@ -8,18 +8,18 @@ This CLI is a thin abstraction on top of [unbuild](https://github.com/unjs/unbui
 
 ```bash
 # w/ pnpm
-pnpm add -D @dopt/pkg-build
+pnpm add -D @pkg-tools/build
 
 # w/ yarn
-yarn add -D @dopt/pkg-build
+yarn add -D @pkg-tools/build
 
 # w/ npm
-npm install -D @dopt/pkg-build
+npm install -D @pkg-tools/build
 ```
 
 ### Usage
 
-Create a `build.config.ts` in your package root that imports `@dopt/pkg-build`.
+Create a `build.config.ts` in your package root that imports `@pkg-tools/build`.
 
 This package exports `external` and `internal` build configurations. External are for package we externalize i.e. opensource and publish.
 
@@ -33,18 +33,18 @@ We provide four different external package build configurations.
 If we were building a node package, our `build.config.ts` might look like the following.
 
 ```
-import { external } from '@dopt/pkg-build';
+import { external } from '@pkg-tools/build';
 
 export default external.node({
   // ... override any default build configuration
 })
 ```
 
-Now, in your `package.json`, you can use the exported cli `pkg-build` in your build script e.g.
+Now, in your `package.json`, you can use the exported cli `build` in your build script e.g.
 
 ```
 "scripts": {
-  "build": "pkg-build"
+  "build": "build"
 }
 ```
 
