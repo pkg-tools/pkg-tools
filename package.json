@@ -1,6 +1,6 @@
 {
   "name": "pkg-tools",
-  "version": "1.0.3",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "turbo run build --no-daemon",
