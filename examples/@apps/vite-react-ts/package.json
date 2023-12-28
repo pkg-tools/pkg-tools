@@ -1,0 +1,33 @@
+{
+  "name": "@apps/vite-react-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "vite build",
+    "clean": "clean",
+    "dev": "vite",
+    "format": "format",
+    "formatcheck": "format -c",
+    "lint": "lint",
+    "test": "echo \"@apps/vite-react-ts has no unit tests\"; exit 0;",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": "",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@pkg-tools/clean": "workspace:*",
+    "@pkg-tools/format": "workspace:*",
+    "@pkg-tools/lint": "workspace:*",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
+}
