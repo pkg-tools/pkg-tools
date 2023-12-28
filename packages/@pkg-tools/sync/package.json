@@ -1,6 +1,7 @@
 {
   "name": "@pkg-tools/sync",
   "version": "0.0.0",
+  "private": false,
   "description": "A utility/tool for syncing packages",
   "homepage": "https://github.com/dopt/pkg-tools",
   "repository": {
@@ -9,17 +10,20 @@
     "directory": "packages/@pkg-tools/sync"
   },
   "license": "MIT",
-  "private": false,
   "type": "module",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "bin": "./cli.js",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
   },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": "./cli.js",
+  "files": [
+    "cli.js",
+    "dist"
+  ],
   "scripts": {
     "👇required package scripts": "",
     "build": "unbuild",
@@ -28,16 +32,13 @@
     "format": "echo \"@pkg-tools/sync does not require format\"; exit 0;",
     "formatcheck": "echo \"@pkg-tools/sync does not require formatcheck\"; exit 0;",
     "lint": "echo \"@pkg-tools/sync does not require lint\"; exit 0;",
+    "postpublish": "./cli.js",
+    "sort": "sort-package-json",
     "test": "echo \"@pkg-tools/sync does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/sync\"",
-    "postpublish": "./cli.js"
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/sync\""
   },
-  "files": [
-    "cli.js",
-    "dist"
-  ],
   "dependencies": {
     "@dopt/resolve-workspace-dependencies": "1.0.0",
     "@dopt/topoftree": "1.0.0",
@@ -52,6 +53,7 @@
     "@types/micromatch": "^4.0.2",
     "@types/node": "20.10.5",
     "shx": "0.3.4",
+    "sort-package-json": "^2.6.0",
     "type-fest": "4.9.0",
     "typescript": "5.3.3",
     "unbuild": "2.0.0"

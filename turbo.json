@@ -12,6 +12,9 @@
     "clean": {
       "cache": false
     },
+    "sort": {
+      "outputs": []
+    },
     "typecheck": {
       "outputs": []
     },
