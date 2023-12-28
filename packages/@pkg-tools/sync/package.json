@@ -42,7 +42,7 @@
     "@dopt/resolve-workspace-dependencies": "1.0.0",
     "@dopt/topoftree": "1.0.0",
     "@octokit/rest": "20.0.2",
-    "@pnpm/make-dedicated-lockfile": "0.5.11",
+    "@pnpm/make-dedicated-lockfile": "0.5.13",
     "citty": "0.1.2",
     "micromatch": "4.0.5"
   },
@@ -52,7 +52,7 @@
     "@types/micromatch": "^4.0.2",
     "@types/node": "18.16.18",
     "shx": "0.3.4",
-    "type-fest": "4.8.3",
+    "type-fest": "4.9.0",
     "typescript": "5.3.3",
     "unbuild": "2.0.0"
   }
