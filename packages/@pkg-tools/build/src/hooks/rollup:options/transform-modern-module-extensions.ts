@@ -7,7 +7,7 @@ type Props = Parameters<BuildHooks["rollup:options"]>;
 
 export function transformModernModuleExtensions(
   ctx: Props[0],
-  options: Props[1]
+  options: Props[1],
 ) {
   if (!Array.isArray(options.output)) {
     return;
