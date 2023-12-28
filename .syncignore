@@ -1,0 +1,4 @@
+.github/**
+.nvmrc
+pnpm-lock.yaml
+.syncignore

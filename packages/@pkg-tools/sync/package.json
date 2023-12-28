@@ -1,0 +1,60 @@
+{
+  "name": "@pkg-tools/sync",
+  "version": "0.0.0",
+  "description": "A utility/tool for syncing packages",
+  "homepage": "https://github.com/dopt/pkg-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dopt/pkg-tools.git",
+    "directory": "packages/@pkg-tools/sync"
+  },
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": "./cli.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "unbuild",
+    "clean": "shx rm -rf ./dist",
+    "dev": "unbuild --stub",
+    "format": "echo \"@pkg-tools/sync does not require format\"; exit 0;",
+    "formatcheck": "echo \"@pkg-tools/sync does not require formatcheck\"; exit 0;",
+    "lint": "echo \"@pkg-tools/sync does not require lint\"; exit 0;",
+    "test": "echo \"@pkg-tools/sync does not require test\"; exit 0;",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": "",
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/sync\"",
+    "postpublish": "./cli.js"
+  },
+  "files": [
+    "cli.js",
+    "dist"
+  ],
+  "dependencies": {
+    "@dopt/resolve-workspace-dependencies": "1.0.0",
+    "@dopt/topoftree": "1.0.0",
+    "@octokit/rest": "20.0.2",
+    "@pnpm/make-dedicated-lockfile": "0.5.11",
+    "citty": "0.1.2",
+    "micromatch": "4.0.5"
+  },
+  "devDependencies": {
+    "@dopt/check-formatting": "1.0.0",
+    "@dopt/config": "1.1.0",
+    "@types/micromatch": "^4.0.2",
+    "@types/node": "18.16.18",
+    "shx": "0.3.4",
+    "type-fest": "4.8.3",
+    "typescript": "5.1.6",
+    "unbuild": "2.0.0"
+  },
+  "openSource": true
+}
