@@ -43,14 +43,14 @@
     "@dopt/topoftree": "1.0.0",
     "@octokit/rest": "20.0.2",
     "@pnpm/make-dedicated-lockfile": "0.5.13",
-    "citty": "0.1.2",
+    "citty": "0.1.5",
     "micromatch": "4.0.5"
   },
   "devDependencies": {
     "@dopt/check-formatting": "1.0.0",
     "@dopt/config": "1.1.0",
     "@types/micromatch": "^4.0.2",
-    "@types/node": "18.16.18",
+    "@types/node": "20.10.5",
     "shx": "0.3.4",
     "type-fest": "4.9.0",
     "typescript": "5.3.3",

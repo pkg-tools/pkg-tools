@@ -38,16 +38,16 @@
     "dist"
   ],
   "dependencies": {
-    "citty": "0.1.2",
-    "consola": "3.1.0",
+    "citty": "0.1.5",
+    "consola": "3.2.3",
     "shelljs": "0.8.5"
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
     "@types/shelljs": "0.8.15",
-    "@typescript-eslint/eslint-plugin": "5.59.11",
-    "@typescript-eslint/parser": "5.59.11",
-    "eslint": "8.42.0",
+    "@typescript-eslint/eslint-plugin": "6.16.0",
+    "@typescript-eslint/parser": "6.16.0",
+    "eslint": "8.56.0",
     "eslint-plugin-react": "7.33.2",
     "prettier": "3.1.1",
     "shx": "0.3.4",
