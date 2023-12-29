@@ -1,6 +1,6 @@
 {
   "name": "@pkg-tools/build",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "description": "A utility/tool for building packages",
   "homepage": "https://github.com/dopt/pkg-tools",
