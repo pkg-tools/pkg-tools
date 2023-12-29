@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": false,
   "description": "A utility/tool for syncing packages",
-  "homepage": "https://github.com/dopt/pkg-tools",
+  "homepage": "https://github.com/pkg-tools/pkg-tools",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dopt/pkg-tools.git",
+    "url": "https://github.com/pkg-tools/pkg-tools.git",
     "directory": "packages/@pkg-tools/sync"
   },
   "license": "MIT",
@@ -32,7 +32,6 @@
     "format": "echo \"@pkg-tools/sync does not require format\"; exit 0;",
     "formatcheck": "echo \"@pkg-tools/sync does not require formatcheck\"; exit 0;",
     "lint": "echo \"@pkg-tools/sync does not require lint\"; exit 0;",
-    "postpublish": "./cli.js",
     "sort": "sort-package-json",
     "test": "echo \"@pkg-tools/sync does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
