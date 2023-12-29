@@ -1,5 +1,11 @@
 # @pkg-tools/build
 
+## 0.0.2
+
+### Patch Changes
+
+- 0b8da7c: Update package metadata across @pkg-tools/\*.
+
 ## 0.0.1
 
 ### Patch Changes
