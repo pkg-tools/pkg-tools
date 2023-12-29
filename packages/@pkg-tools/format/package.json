@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": false,
   "description": "A utility/tool for formating packages",
-  "homepage": "https://github.com/dopt/pkg-tools",
+  "homepage": "https://github.com/pkg-tools/pkg-tools",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dopt/pkg-tools.git",
+    "url": "https://github.com/pkg-tools/pkg-tools.git",
     "directory": "packages/@pkg-tools/format"
   },
   "license": "MIT",
