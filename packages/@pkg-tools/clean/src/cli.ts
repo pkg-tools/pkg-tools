@@ -14,8 +14,17 @@ const main = defineCommand({
     version,
     description,
   },
-  async run() {
-    const directory = path.resolve(process.cwd(), './dist');
+  args: {
+    directory: {
+      alias: 'd',
+      default: './dist',
+      type: 'string',
+      description: 'The directory to clean',
+      required: false,
+    },
+  },
+  async run({ args }) {
+    const directory = path.resolve(process.cwd(), args.directory);
     try {
       rm(directory);
     } catch (error) {

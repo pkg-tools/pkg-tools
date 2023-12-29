@@ -1,4 +1,4 @@
-## @dopt/pkg-clean
+## @pkg-tools/clean
 
 A CLI for cleaning packages build artifacts.
 
@@ -8,20 +8,20 @@ This CLI is a thin abstraction on top of [ShellJs](https://www.npmjs.com/package
 
 ```bash
 # w/ pnpm
-pnpm add -D @dopt/pkg-clean
+pnpm add -D @pkg-tools/clean
 
 # w/ yarn
-yarn add -D @dopt/pkg-clean
+yarn add -D @pkg-tools/clean
 
 # w/ npm
-npm install -D @dopt/pkg-clean
+npm install -D @pkg-tools/clean
 ```
 
 ### Usage
 
 ```
 "scripts": {
-  "clean": "pkg-clean"
+  "clean": "clean"
 }
 ```
 
