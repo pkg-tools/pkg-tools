@@ -33,6 +33,7 @@
     "consola": "3.2.3"
   },
   "devDependencies": {
+    "@dopt/config": "1.1.0",
     "@pkg-tools/build": "workspace:*",
     "@pkg-tools/clean": "workspace:*",
     "@pkg-tools/format": "workspace:*",

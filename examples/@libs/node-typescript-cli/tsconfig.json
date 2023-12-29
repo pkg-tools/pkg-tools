@@ -1,4 +1,5 @@
 {
+  "extends": "@dopt/config/tsconfig/node.json",
   "compilerOptions": {
     "moduleResolution": "Node",
     "resolveJsonModule": true,

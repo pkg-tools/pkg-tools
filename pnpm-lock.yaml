@@ -91,6 +91,9 @@ importers:
         specifier: 3.2.3
         version: 3.2.3
     devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
       '@pkg-tools/build':
         specifier: workspace:*
         version: link:../../../packages/@pkg-tools/build
