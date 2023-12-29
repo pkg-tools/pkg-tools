@@ -1,0 +1,43 @@
+{
+  "name": "@libs/node-typescript-cli",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": "./cli.js",
+  "files": [
+    "cli.js",
+    "dist"
+  ],
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "build",
+    "clean": "clean",
+    "dev": "build -s",
+    "format": "format",
+    "formatcheck": "format -c",
+    "lint": "lint",
+    "test": "echo \"@libs/node-typescript-cli has no unit tests\"; exit 0;",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": ""
+  },
+  "dependencies": {
+    "citty": "0.1.5",
+    "consola": "3.2.3"
+  },
+  "devDependencies": {
+    "@dopt/config": "1.1.0",
+    "@pkg-tools/build": "workspace:*",
+    "@pkg-tools/clean": "workspace:*",
+    "@pkg-tools/format": "workspace:*",
+    "@pkg-tools/lint": "workspace:*",
+    "typescript": "5.3.3"
+  }
+}

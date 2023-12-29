@@ -29,24 +29,6 @@ export function addNodeOutput(ctx: Props[0], options: Props[1]) {
   const nodeOutput: RollupOptions["output"] = [
     {
       dir: node,
-      entryFileNames: "[name].cjs",
-      chunkFileNames: (chunk) => {
-        if (chunk.isDynamicEntry) {
-          return `chunks/[name].cjs`;
-        }
-        return `shared/${ctx.options.name}.[hash].cjs`;
-      },
-      format: "cjs",
-      exports: "auto",
-      interop: "compat",
-      generatedCode: { constBindings: true },
-      externalLiveBindings: false,
-      freeze: false,
-      sourcemap: ctx.options.sourcemap,
-      ...ctx.options.rollup.output,
-    },
-    {
-      dir: node,
       entryFileNames: "[name].mjs",
       chunkFileNames: (chunk) => {
         if (chunk.isDynamicEntry) {
@@ -63,6 +45,27 @@ export function addNodeOutput(ctx: Props[0], options: Props[1]) {
       ...ctx.options.rollup.output,
     },
   ];
+
+  if (ctx.options.rollup.emitCJS) {
+    nodeOutput.push({
+      dir: node,
+      entryFileNames: "[name].cjs",
+      chunkFileNames: (chunk) => {
+        if (chunk.isDynamicEntry) {
+          return `chunks/[name].cjs`;
+        }
+        return `shared/${ctx.options.name}.[hash].cjs`;
+      },
+      format: "cjs",
+      exports: "auto",
+      interop: "compat",
+      generatedCode: { constBindings: true },
+      externalLiveBindings: false,
+      freeze: false,
+      sourcemap: ctx.options.sourcemap,
+      ...ctx.options.rollup.output,
+    });
+  }
 
   options.output = [...options.output, ...nodeOutput];
 }

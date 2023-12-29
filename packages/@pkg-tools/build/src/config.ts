@@ -12,7 +12,6 @@ export function node(options: BuildConfig) {
     ...options,
     rollup: {
       inlineDependencies: true,
-      emitCJS: true,
       ...options.rollup,
       esbuild: {
         target: ["es2016", "node16"],
@@ -23,7 +22,9 @@ export function node(options: BuildConfig) {
     hooks: {
       ...options.hooks,
       "rollup:options": (ctx, opts) => {
-        transformModernModuleExtensions(ctx, opts);
+        if (options.rollup?.emitCJS) {
+          transformModernModuleExtensions(ctx, opts);
+        }
 
         if (options?.hooks && options.hooks["rollup:options"]) {
           options.hooks["rollup:options"](ctx, opts);
@@ -42,7 +43,6 @@ export function isomorphic(options: BuildConfig) {
     ...options,
     rollup: {
       inlineDependencies: true,
-      emitCJS: true,
       ...options.rollup,
       esbuild: {
         target: ["es2016", "node16"],
@@ -53,7 +53,9 @@ export function isomorphic(options: BuildConfig) {
     hooks: {
       ...options.hooks,
       "rollup:options": (ctx, opts) => {
-        transformModernModuleExtensions(ctx, opts);
+        if (options.rollup?.emitCJS) {
+          transformModernModuleExtensions(ctx, opts);
+        }
         addNodeOutput(ctx, opts);
 
         if (options?.hooks && options.hooks["rollup:options"]) {
@@ -73,7 +75,6 @@ export function browser(options: BuildConfig) {
     ...options,
     rollup: {
       inlineDependencies: true,
-      emitCJS: true,
       ...options.rollup,
       esbuild: {
         target: "es2016",
@@ -84,7 +85,9 @@ export function browser(options: BuildConfig) {
     hooks: {
       ...options.hooks,
       "rollup:options": (ctx, opts) => {
-        transformModernModuleExtensions(ctx, opts);
+        if (options.rollup?.emitCJS) {
+          transformModernModuleExtensions(ctx, opts);
+        }
         if (options?.hooks && options.hooks["rollup:options"]) {
           options.hooks["rollup:options"](ctx, opts);
         }
@@ -102,7 +105,6 @@ export function react(options: BuildConfig) {
     ...options,
     rollup: {
       inlineDependencies: true,
-      emitCJS: true,
       ...options.rollup,
       esbuild: {
         target: "es2016",
@@ -114,7 +116,9 @@ export function react(options: BuildConfig) {
     hooks: {
       ...options.hooks,
       "rollup:options": (ctx, opts) => {
-        transformModernModuleExtensions(ctx, opts);
+        if (options.rollup?.emitCJS) {
+          transformModernModuleExtensions(ctx, opts);
+        }
         if (options?.hooks && options.hooks["rollup:options"]) {
           options.hooks["rollup:options"](ctx, opts);
         }
