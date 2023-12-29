@@ -21,9 +21,7 @@ npm install -D @pkg-tools/build
 
 Create a `build.config.ts` in your package root that imports `@pkg-tools/build`.
 
-This package exports `external` and `internal` build configurations. External are for package we externalize i.e. opensource and publish.
-
-We provide four different external package build configurations.
+We provide four different package build configurations.
 
 1. node
 1. isomorphic
@@ -33,9 +31,9 @@ We provide four different external package build configurations.
 If we were building a node package, our `build.config.ts` might look like the following.
 
 ```
-import { external } from '@pkg-tools/build';
+import { config } from '@pkg-tools/build';
 
-export default external.node({
+export default config.node({
   // ... override any default build configuration
 })
 ```

@@ -25,4 +25,12 @@ npm install -D @pkg-tools/clean
 }
 ```
 
+By default `clean` removes the `./dist` directory. If you need to clean a different directory provide a relative path to it as an argument e.g.,
+
+```
+"scripts": {
+  "clean": "clean ./lib"
+}
+```
+
 Using your package manager, you can now run the build script to clean your package's `./dist` directory.
