@@ -1,0 +1,65 @@
+{
+  "name": "@pkg-tools/pkg-tools",
+  "version": "0.0.0",
+  "private": false,
+  "description": "A rollup of all the pkg-tools into a single package.",
+  "homepage": "https://github.com/pkg-tools/pkg-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkg-tools/pkg-tools.git",
+    "directory": "packages/@pkg-tools/pkg-tools"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "build": "./node_modules/.bin/build",
+    "clean": "./node_modules/.bin/clean",
+    "format": "./node_modules/.bin/format",
+    "lint": "./node_modules/.bin/lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "unbuild",
+    "clean": "shx rm -rf ./dist",
+    "dev": "unbuild --stub",
+    "format": "prettier -w .",
+    "formatcheck": "prettier -c .",
+    "lint": "eslint .",
+    "sort": "sort-package-json",
+    "test": "echo \"@pkg-tools/pkg-tools does not require test\"; exit 0;",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": "",
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/pkg-tools\""
+  },
+  "dependencies": {
+    "@pkg-tools/config": "workspace:*",
+    "@pkg-tools/build": "workspace:*",
+    "@pkg-tools/clean": "workspace:*",
+    "@pkg-tools/format": "workspace:*",
+    "@pkg-tools/lint": "workspace:*"
+  },
+  "devDependencies": {
+    "@dopt/config": "1.1.0",
+    "@types/shelljs": "0.8.15",
+    "@typescript-eslint/eslint-plugin": "6.16.0",
+    "@typescript-eslint/parser": "6.16.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-react": "7.33.2",
+    "prettier": "3.1.1",
+    "shx": "0.3.4",
+    "sort-package-json": "^2.6.0",
+    "typescript": "5.3.3",
+    "unbuild": "2.0.0"
+  }
+}
