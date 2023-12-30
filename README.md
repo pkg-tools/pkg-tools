@@ -24,9 +24,9 @@ In general, you can use these tools w/o creating/overriding the default configur
 
 [MIT](./LICENSE)
 
-[npm-version-src]: https://img.shields.io/npm/v/%40pkg-tools/build?style=flat-square
-[npm-version-href]: https://npmjs.com/package/%40pkg-tools/build
-[npm-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/build?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/%40pkg-tools/build
+[npm-version-src]: https://img.shields.io/npm/v/%40pkg-tools/pkg-tools?style=flat-square
+[npm-version-href]: https://npmjs.com/package/%40pkg-tools/pkg-tools
+[npm-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/pkg-tools?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/%40pkg-tools/pkg-tools
 [github-actions-src]: https://img.shields.io/github/actions/workflow/status/pkg-tools/pkg-tools/ci.yml?style=flat-square
 [github-actions-href]: https://github.com/pkg-tools/pkg-tools/actions/workflows/ci.yml
