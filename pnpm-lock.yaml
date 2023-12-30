@@ -100,6 +100,9 @@ importers:
       '@pkg-tools/clean':
         specifier: workspace:*
         version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/config
       '@pkg-tools/format':
         specifier: workspace:*
         version: link:../../../packages/@pkg-tools/format
@@ -115,6 +118,9 @@ importers:
       '@dopt/env':
         specifier: 1.0.0
         version: 1.0.0
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../config
       '@vanilla-extract/rollup-plugin':
         specifier: 1.3.0
         version: 1.3.0(@types/node@20.10.5)(rollup@3.29.4)
@@ -161,6 +167,9 @@ importers:
 
   packages/@pkg-tools/clean:
     dependencies:
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../config
       citty:
         specifier: 0.1.5
         version: 0.1.5
@@ -205,8 +214,60 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.3.3)
 
+  packages/@pkg-tools/config:
+    dependencies:
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+      defu:
+        specifier: ^6.1.3
+        version: 6.1.3
+      eslint:
+        specifier: 8.56.0
+        version: 8.56.0
+      eslint-define-config:
+        specifier: ^2.1.0
+        version: 2.1.0
+      jiti:
+        specifier: ^1.21.0
+        version: 1.21.0
+      prettier:
+        specifier: 3.1.1
+        version: 3.1.1
+      unbuild:
+        specifier: 2.0.0
+        version: 2.0.0(typescript@5.3.3)
+    devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@types/shelljs':
+        specifier: 0.8.15
+        version: 0.8.15
+      '@typescript-eslint/eslint-plugin':
+        specifier: 6.16.0
+        version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: 6.16.0
+        version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
+      eslint-plugin-react:
+        specifier: 7.33.2
+        version: 7.33.2(eslint@8.56.0)
+      shx:
+        specifier: 0.3.4
+        version: 0.3.4
+      sort-package-json:
+        specifier: ^2.6.0
+        version: 2.6.0
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
   packages/@pkg-tools/format:
     dependencies:
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../config
       chalk:
         specifier: 5.3.0
         version: 5.3.0
@@ -268,6 +329,9 @@ importers:
       '@babel/eslint-parser':
         specifier: ^7.23.3
         version: 7.23.3(@babel/core@7.23.6)(eslint@8.56.0)
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../config
       citty:
         specifier: 0.1.5
         version: 0.1.5
@@ -4615,6 +4679,11 @@ packages:
   /escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+
+  /eslint-define-config@2.1.0:
+    resolution: {integrity: sha512-QUp6pM9pjKEVannNAbSJNeRuYwW3LshejfyBBpjeMGaJjaDUpVps4C6KVR8R7dWZnD3i0synmrE36znjTkJvdQ==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
+    dev: false
 
   /eslint-plugin-react-hooks@4.6.0(eslint@8.56.0):
     resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}

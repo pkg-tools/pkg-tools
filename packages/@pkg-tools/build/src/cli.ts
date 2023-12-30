@@ -10,6 +10,7 @@ import consola from "consola";
 import { name, version, description } from "../package.json";
 
 import { build } from "unbuild";
+import { getBuildConfig } from "@pkg-tools/config";
 
 const main = defineCommand({
   meta: {
@@ -46,10 +47,17 @@ const main = defineCommand({
         });
       });
     } else {
-      await build(rootDir, args.stub, {}).catch((error) => {
-        consola.error(`Error building ${rootDir}: ${error}`);
-        throw error;
-      });
+      const buildConfig = getBuildConfig();
+      const buildConfigs = (
+        Array.isArray(buildConfig) ? buildConfig : [buildConfig]
+      ).filter(Boolean);
+
+      for (const buildConfig of buildConfigs) {
+        await build(rootDir, args.stub, buildConfig).catch((error) => {
+          consola.error(`Error building ${rootDir}: ${error}`);
+          throw error;
+        });
+      }
     }
   },
 });

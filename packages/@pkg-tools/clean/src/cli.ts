@@ -7,6 +7,7 @@ import { rm } from '.';
 
 import consola from 'consola';
 import { name, version, description } from '../package.json';
+import { getCleanConfig } from '@pkg-tools/config';
 
 const main = defineCommand({
   meta: {
@@ -17,14 +18,18 @@ const main = defineCommand({
   args: {
     directory: {
       alias: 'd',
-      default: './dist',
       type: 'string',
       description: 'The directory to clean',
       required: false,
     },
   },
   async run({ args }) {
-    const directory = path.resolve(process.cwd(), args.directory);
+    const cleanConfig = getCleanConfig();
+
+    const directory = path.resolve(
+      process.cwd(),
+      args.directory || cleanConfig.directory
+    );
     try {
       rm(directory);
     } catch (error) {

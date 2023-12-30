@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import prettier from 'prettier';
 import chalk from 'chalk';
+import { getFormatConfig } from '@pkg-tools/config';
 
 async function readFile(filePath: string) {
   return await fs.readFile(filePath, 'utf8');
@@ -14,10 +15,10 @@ async function writeFile(filePath: string, contents: string) {
 
 async function formatFile(inputFilePath: string, outputFilePath: string) {
   const fileContent = await readFile(inputFilePath);
-  const prettierConfig = await prettier.resolveConfig(inputFilePath);
+  const formatConfig = getFormatConfig();
   const start = Date.now();
   const formatted = await prettier.format(fileContent, {
-    ...prettierConfig,
+    ...formatConfig,
     filepath: inputFilePath,
   });
 
@@ -59,9 +60,9 @@ export async function check(directory: string) {
     await Promise.all(
       sourceFilePaths.map(async (filePath) => {
         const fileContent = await readFile(filePath);
-        const prettierConfig = await prettier.resolveConfig(filePath);
+        const formatConfig = getFormatConfig();
         const isCompliant = prettier.check(fileContent, {
-          ...prettierConfig,
+          ...formatConfig,
           filepath: filePath,
         });
 
