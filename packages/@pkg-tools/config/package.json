@@ -2,7 +2,7 @@
   "name": "@pkg-tools/config",
   "version": "0.0.2",
   "private": false,
-  "description": "A utility/tool for configing packages",
+  "description": "A unified configuration layer for pkg-tools",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
   "repository": {
     "type": "git",
