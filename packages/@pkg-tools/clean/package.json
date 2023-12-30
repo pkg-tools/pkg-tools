@@ -41,7 +41,8 @@
   "dependencies": {
     "citty": "0.1.5",
     "consola": "3.2.3",
-    "shelljs": "0.8.5"
+    "shelljs": "0.8.5",
+    "@pkg-tools/config": "workspace:*"
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",

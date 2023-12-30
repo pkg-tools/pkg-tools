@@ -35,6 +35,7 @@
   "devDependencies": {
     "@dopt/config": "1.1.0",
     "@pkg-tools/build": "workspace:*",
+    "@pkg-tools/config": "workspace:*",
     "@pkg-tools/clean": "workspace:*",
     "@pkg-tools/format": "workspace:*",
     "@pkg-tools/lint": "workspace:*",

@@ -39,6 +39,7 @@
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/lint\""
   },
   "dependencies": {
+    "@pkg-tools/config": "workspace:*",
     "@babel/eslint-parser": "^7.23.3",
     "citty": "0.1.5",
     "consola": "3.2.3",

@@ -3,6 +3,7 @@ import { globby } from 'globby';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ESLint } from 'eslint';
+import { getLintConfig } from '@pkg-tools/config';
 
 async function readFile(filePath: string) {
   return await fs.readFile(filePath, 'utf8');
@@ -31,46 +32,9 @@ export async function lint({
   directory: string;
   ignore: string[];
 }) {
-  const eslint = new ESLint({
-    overrideConfig: {
-      overrides: [
-        {
-          files: ['*.ts', '*.tsx'],
-          parser: '@typescript-eslint/parser',
-          extends: [
-            'plugin:@typescript-eslint/recommended',
-            'plugin:react-hooks/recommended',
-          ],
-          plugins: ['@typescript-eslint', 'react-hooks'],
-          rules: {
-            '@typescript-eslint/ban-ts-comment': 1,
-            'no-unused-vars': 'off',
-            '@typescript-eslint/no-unused-vars': [
-              'error',
-              {
-                args: 'all',
-                argsIgnorePattern: '^_',
-                varsIgnorePattern: '^_',
-                caughtErrorsIgnorePattern: '^_',
-              },
-            ],
-          },
-        },
-        {
-          files: ['*.js'],
-          parser: '@babel/eslint-parser',
-          parserOptions: {
-            requireConfigFile: false,
-          },
-          env: {
-            browser: true,
-            jest: true,
-            node: true,
-          },
-        },
-      ],
-    },
-  });
+  const config = getLintConfig();
+  //@ts-ignore
+  const eslint = new ESLint(config);
   try {
     const sourceFilePaths = await getSourceFilePaths({ directory, ignore });
     await Promise.all(

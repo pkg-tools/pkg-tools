@@ -39,6 +39,7 @@
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/format\""
   },
   "dependencies": {
+    "@pkg-tools/config": "workspace:*",
     "chalk": "5.3.0",
     "citty": "0.1.5",
     "globby": "14.0.0",

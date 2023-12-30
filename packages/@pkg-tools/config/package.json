@@ -1,13 +1,13 @@
 {
-  "name": "@pkg-tools/build",
+  "name": "@pkg-tools/config",
   "version": "0.0.2",
   "private": false,
-  "description": "A utility/tool for building packages",
+  "description": "A utility/tool for configing packages",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
   "repository": {
     "type": "git",
     "url": "https://github.com/pkg-tools/pkg-tools.git",
-    "directory": "packages/@pkg-tools/build"
+    "directory": "packages/@pkg-tools/config"
   },
   "license": "MIT",
   "type": "module",
@@ -19,9 +19,7 @@
   },
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "bin": "./cli.js",
   "files": [
-    "cli.js",
     "dist"
   ],
   "scripts": {
@@ -29,32 +27,32 @@
     "build": "unbuild",
     "clean": "shx rm -rf ./dist",
     "dev": "unbuild --stub",
-    "format": "prettier --w .",
+    "format": "prettier -w .",
     "formatcheck": "prettier -c .",
     "lint": "eslint .",
     "sort": "sort-package-json",
-    "test": "echo \"@pkg-tools/lint does not require test\"; exit 0;",
+    "test": "echo \"@pkg-tools/config does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/build\""
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/config\""
   },
   "dependencies": {
-    "@dopt/env": "1.0.0",
-    "@pkg-tools/config": "workspace:*",
-    "@vanilla-extract/rollup-plugin": "1.3.0",
-    "citty": "0.1.5",
     "consola": "3.2.3",
-    "nodemon": "3.0.2",
+    "defu": "^6.1.3",
+    "eslint": "8.56.0",
+    "eslint-define-config": "^2.1.0",
+    "jiti": "^1.21.0",
+    "prettier": "3.1.1",
     "unbuild": "2.0.0"
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
-    "@types/node": "20.10.5",
-    "@types/nodemon": "^1.19.6",
+    "@types/shelljs": "0.8.15",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
-    "eslint": "8.56.0",
+    "eslint-plugin-react": "7.33.2",
     "prettier": "3.1.1",
+    "shx": "0.3.4",
     "sort-package-json": "^2.6.0",
     "typescript": "5.3.3"
   }
