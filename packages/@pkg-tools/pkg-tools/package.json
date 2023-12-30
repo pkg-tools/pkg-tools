@@ -1,13 +1,13 @@
 {
   "name": "@pkg-tools/pkg-tools",
-  "version": "0.0.3",
+  "version": "0.0.0",
   "private": false,
-  "description": "A utility/tool for cleaning packages",
+  "description": "A rollup of all the pkg-tools into a single package.",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
   "repository": {
     "type": "git",
     "url": "https://github.com/pkg-tools/pkg-tools.git",
-    "directory": "packages/@pkg-tools/clean"
+    "directory": "packages/@pkg-tools/pkg-tools"
   },
   "license": "MIT",
   "type": "module",
@@ -37,10 +37,10 @@
     "formatcheck": "prettier -c .",
     "lint": "eslint .",
     "sort": "sort-package-json",
-    "test": "echo \"@pkg-tools/clean does not require test\"; exit 0;",
+    "test": "echo \"@pkg-tools/pkg-tools does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/clean\""
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/pkg-tools\""
   },
   "dependencies": {
     "@pkg-tools/config": "workspace:*",
