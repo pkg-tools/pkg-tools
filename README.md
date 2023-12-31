@@ -48,7 +48,7 @@ export default definePkgToolsConfig({
 });
 ```
 
-### 💡Goal
+## 💡Goal
 
 Create a tool per-typical/common TypesScript package task. Each tool should do the following.
 
@@ -57,18 +57,98 @@ Create a tool per-typical/common TypesScript package task. Each tool should do t
 - Be configurable in the `pkg.config.ts`
 - Be accessible via an individual package (e.g. `@pkg-tools/build` or via a monolitic package `import { build } from '@pkg-tools/pkg-tools'`
 
-### 🛠️ Tools
+## 🛠️ Tools
 
 Below is the family of tools the comprise pkg-tools.
 
-| Package                                                                      | Status |                                                                           Version | Downloads                                                                               |
-| ---------------------------------------------------------------------------- | :----: | --------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------- |
-| **[@pkg-tools/pkg-tools](https://npmjs.com/package/%40pkg-tools/pkg-tools)** |   🟢   | [![@pkg-tools/pkg-tools::version][pkg-tools-version-src]][pkg-tools-version-href] | [![@pkg-tools/pkg-tools::downloads][pkg-tools-downloads-src]][pkg-tools-downloads-href] |
-| **[@pkg-tools/build](https://npmjs.com/package/%40pkg-tools/build)**         |   🟢   |             [![@pkg-tools/build::version][build-version-src]][build-version-href] | [![@pkg-tools/build::downloads][build-downloads-src]][build-downloads-href]             |
-| **[@pkg-tools/clean](https://npmjs.com/package/%40pkg-tools/clean)**         |   🟢   |             [![@pkg-tools/clean::version][clean-version-src]][clean-version-href] | [![@pkg-tools/clean::downloads][clean-downloads-src]][clean-downloads-href]             |
-| **[@pkg-tools/format](https://npmjs.com/package/%40pkg-tools/format)**       |   🟢   |          [![@pkg-tools/format::version][format-version-src]][format-version-href] | [![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href]          |
-| **[@pkg-tools/lint](https://npmjs.com/package/%40pkg-tools/lint)**           |   🟢   |                [![@pkg-tools/lint::version][lint-version-src]][lint-version-href] | [![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]                |
-| **[@pkg-tools/sync](https://npmjs.com/package/%40pkg-tools/sync)**           |   🟡   |                [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]                |
+| Package                                                     | Status |                                                                           Version | Downloads                                                                               |
+| ----------------------------------------------------------- | :----: | --------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------- |
+| **[@pkg-tools/pkg-tools](./packages/@pkg-tools/pkg-tools)** |   🟢   | [![@pkg-tools/pkg-tools::version][pkg-tools-version-src]][pkg-tools-version-href] | [![@pkg-tools/pkg-tools::downloads][pkg-tools-downloads-src]][pkg-tools-downloads-href] |
+| **[@pkg-tools/build](./packages/@pkg-tools/build)**         |   🟢   |             [![@pkg-tools/build::version][build-version-src]][build-version-href] | [![@pkg-tools/build::downloads][build-downloads-src]][build-downloads-href]             |
+| **[@pkg-tools/clean](./packages/@pkg-tools/clean)**         |   🟢   |             [![@pkg-tools/clean::version][clean-version-src]][clean-version-href] | [![@pkg-tools/clean::downloads][clean-downloads-src]][clean-downloads-href]             |
+| **[@pkg-tools/format](./packages/@pkg-tools/format)**       |   🟢   |          [![@pkg-tools/format::version][format-version-src]][format-version-href] | [![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href]          |
+| **[@pkg-tools/lint](./packages/@pkg-tools/lint)**           |   🟢   |                [![@pkg-tools/lint::version][lint-version-src]][lint-version-href] | [![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]                |
+| **[@pkg-tools/sync](./packages/@pkg-tools/sync)**           |   🟡   |                [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]                |
+
+## Usage
+
+**Install:**
+
+The monolithic package.
+
+```sh
+# pnpm
+pnpm add -D @pkg-tools/pkg-tool
+
+# yarn
+yarn add -D @pkg-tools/pkg-tool
+
+# npm
+npm install @pkg-tools/pkg-tool --save-dev
+```
+
+or select individual packages e.g.
+
+```sh
+# pnpm
+pnpm add -D @pkg-tools/build @pkg-tools/format
+
+# yarn
+yarn add -D @pkg-tools/build @pkg-tools/format
+
+# npm
+npm install @pkg-tools/build @pkg-tools/format --save-dev
+```
+
+**Import:**
+
+Use the CLIs provided by the pacakge(s) in your package scripts.
+
+```json
+"scripts": {
+  "build": "build",
+  "clean": "clean",
+  "dev": "build -s",
+  "format": "format",
+  "lint": "lint"
+},
+```
+
+**Configuration:**
+
+Define a `pkg.config.ts` in the root of your package and add the following.
+
+```ts
+/* via monolithic package */
+import { config } from '@pkg-tools/pkg-tools';
+export default config.definePkgToolsConfig({
+  build: {...},
+  format: {...},
+  clean: {...},
+  lint: {...},
+});
+```
+
+If not using the monolithic package you need to install `@pkg-tools/config`. In this case your config will look like the following.
+
+```ts
+import { definePkgToolsConfig } from '@pkg-tools/config';
+
+export default definePkgToolsConfig({
+  build: {...},
+  format: {...},
+  clean: {...},
+  lint: {...},
+});
+
+```
+
+## Development
+
+- Clone this repository
+- Run `fnm` or `nvm` in the monorepo root
+- Install dependencies using `pnpm install`
+- Build the monorepo `pnpm run build`
 
 ## License
 
