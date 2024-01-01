@@ -1,5 +1,11 @@
 # @pkg-tools/sync
 
+## 0.0.3
+
+### Patch Changes
+
+- c68408a: Update READMEs.
+
 ## 0.0.2
 
 ### Patch Changes

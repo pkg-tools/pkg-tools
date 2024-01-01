@@ -1,6 +1,6 @@
 {
   "name": "@pkg-tools/pkg-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "A rollup of all the pkg-tools into a single package.",
   "homepage": "https://github.com/pkg-tools/pkg-tools",

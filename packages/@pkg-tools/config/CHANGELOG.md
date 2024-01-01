@@ -1,5 +1,11 @@
 # @pkg-tools/config
 
+## 0.0.4
+
+### Patch Changes
+
+- c68408a: Update READMEs.
+
 ## 0.0.3
 
 ### Patch Changes
