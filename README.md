@@ -8,7 +8,7 @@
 
 ## 💭 What if...
 
-The non-source bits of your TypeScript packages were dead simple.
+The non-`./src` bits of your TypeScript packages were dead simple.
 
 I'm talking about **building**, **deving**, **linting**, **formatting**, **cleaning**, **publishing**, etc.
 
