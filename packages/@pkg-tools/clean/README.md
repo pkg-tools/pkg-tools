@@ -19,6 +19,8 @@ npm install -D @pkg-tools/clean
 
 ### Usage
 
+In your `package.json`, you can use the exported cli `clean` in your clean script e.g.
+
 ```
 "scripts": {
   "clean": "clean"
@@ -33,4 +35,31 @@ By default `clean` removes the `./dist` directory. If you need to clean a differ
 }
 ```
 
-Using your package manager, you can now run the build script to clean your package's `./dist` directory.
+Alternatively, you can configre clean using the a `pkg.config.ts` configuration. See the next section.
+
+### Configuration
+
+Install the @pkg-tools/config package
+
+```bash
+# w/ pnpm
+pnpm add -D @pkg-tools/config
+
+# w/ yarn
+yarn add -D @pkg-tools/config
+
+# w/ npm
+npm install -D @pkg-tools/config
+```
+
+Define a `pkg.config.ts` in the root of your package and add the following.
+
+```ts
+import { definePkgToolsConfig } from '@pkg-tools/config';
+
+export default definePkgToolsConfig({
+  clean: {
+    directory: './lib',
+  },
+});
+```

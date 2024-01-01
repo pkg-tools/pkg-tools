@@ -19,26 +19,7 @@ npm install -D @pkg-tools/build
 
 ### Usage
 
-Create a `build.config.ts` in your package root that imports `@pkg-tools/build`.
-
-We provide four different package build configurations.
-
-1. node
-1. isomorphic
-1. browser
-1. react
-
-If we were building a node package, our `build.config.ts` might look like the following.
-
-```
-import { config } from '@pkg-tools/build';
-
-export default config.node({
-  // ... override any default build configuration
-})
-```
-
-Now, in your `package.json`, you can use the exported cli `build` in your build script e.g.
+In your `package.json`, you can use the exported cli `build` in your build script e.g.
 
 ```
 "scripts": {
@@ -46,4 +27,28 @@ Now, in your `package.json`, you can use the exported cli `build` in your build 
 }
 ```
 
-Using your package manager, you can now run the build script to build your package.
+### Configuration
+
+Install the @pkg-tools/config package
+
+```bash
+# w/ pnpm
+pnpm add -D @pkg-tools/config
+
+# w/ yarn
+yarn add -D @pkg-tools/config
+
+# w/ npm
+npm install -D @pkg-tools/config
+```
+
+Define a `pkg.config.ts` in the root of your package and add the following.
+
+```ts
+import { definePkgToolsConfig } from '@pkg-tools/config';
+
+export default definePkgToolsConfig({
+  build: {...},
+});
+
+```
