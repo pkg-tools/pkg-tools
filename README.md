@@ -1,6 +1,6 @@
 # pkg-tools
 
-> A simpler way to build and ship TypeScript packages.
+> An opinionated toolchain for your TS package's build-related tasks.
 
 [![Github Actions][github-actions-src]][github-actions-href]
 
