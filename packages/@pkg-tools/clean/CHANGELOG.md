@@ -1,5 +1,13 @@
 # @pkg-tools/clean
 
+## 0.0.4
+
+### Patch Changes
+
+- c68408a: Update READMEs.
+- Updated dependencies [c68408a]
+  - @pkg-tools/config@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
