@@ -1,5 +1,11 @@
 # @pkg-tools/config
 
+## 0.0.5
+
+### Patch Changes
+
+- 1f71ca9: Rename the configuration file from `pkg.config.ts` to `pkg-tools.config.ts`.
+
 ## 0.0.4
 
 ### Patch Changes

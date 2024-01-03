@@ -1,5 +1,13 @@
 # @pkg-tools/build
 
+## 0.0.5
+
+### Patch Changes
+
+- 1f71ca9: Rename the configuration file from `pkg.config.ts` to `pkg-tools.config.ts`.
+- Updated dependencies [1f71ca9]
+  - @pkg-tools/config@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
