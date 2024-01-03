@@ -6,7 +6,7 @@
 
 🚧 This project is in beta. 🚧
 
-### 🚩 Problem
+## 🚩 Problem
 
 The toolchain necessary to build TypeScript packages is quite complicated.
 
@@ -20,7 +20,7 @@ I'm talking about the libraries, configuration, and package scripts necessary do
 
 The complexity is a function of the growing number of target runtimes, the sheer variety of what might be in those packages, and the voltaility of the JS/TS ecosystem.
 
-### 🎯Goal
+## 🎯Goal
 
 Create an opinionated toolchain for the most common TS package tasks. Each tool should do the following.
 
