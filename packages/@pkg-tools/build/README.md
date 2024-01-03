@@ -27,6 +27,33 @@ In your `package.json`, you can use the exported cli `build` in your build scrip
 }
 ```
 
+The @pkg-tools/build package ships with some common configurations. Read more on [config](#configuration) below. These configurations change the build output and will typically require update to your package.json exports.
+
+```ts
+import { definePkgToolsConfig } from '@pkg-tools/config';
+import { config } from "@pkg-tools/build";
+
+// Browser packages
+export default definePkgToolsConfig({
+  build: config.browser({...})
+});
+
+// React packages
+export default definePkgToolsConfig({
+  build: config.react({...})
+});
+
+// Node packages
+export default definePkgToolsConfig({
+  build: config.node({...})
+});
+
+// Isomorpohic packages
+export default definePkgToolsConfig({
+  build: config.isomorphic({...})
+});
+```
+
 ### Configuration
 
 Install the @pkg-tools/config package
