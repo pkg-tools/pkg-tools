@@ -42,7 +42,7 @@ yarn add -D @pkg-tools/config
 npm install -D @pkg-tools/config
 ```
 
-Define a `pkg.config.ts` in the root of your package and add the following.
+Define a `pkg-tools.config.ts` in the root of your package and add the following.
 
 ```ts
 import { definePkgToolsConfig } from '@pkg-tools/config';
