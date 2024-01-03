@@ -1,5 +1,5 @@
-import consola from "consola";
+import consola from 'consola';
 
 export function run() {
-  consola.log("running");
+  consola.log('running');
 }

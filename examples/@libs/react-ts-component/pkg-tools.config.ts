@@ -1,8 +1,8 @@
-import { config, build } from "@pkg-tools/pkg-tools";
+import { config, build } from '@pkg-tools/pkg-tools';
 
 export default config.definePkgToolsConfig({
   build: build.config.browser({
-    entries: ["src/index"],
+    entries: ['src/index'],
     rollup: {
       emitCJS: true,
     },

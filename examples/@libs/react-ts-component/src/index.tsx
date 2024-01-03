@@ -2,11 +2,11 @@ import {
   forwardRef,
   type ForwardedRef,
   type ComponentPropsWithoutRef,
-} from "react";
+} from 'react';
 
-const cardClassName = "card";
+const cardClassName = 'card';
 
-export interface CardProps extends ComponentPropsWithoutRef<"div"> {
+export interface CardProps extends ComponentPropsWithoutRef<'div'> {
   width: number;
   height: number;
 }
