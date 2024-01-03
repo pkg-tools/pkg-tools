@@ -1,0 +1,41 @@
+{
+  "name": "@libs/react-ts-component",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs.js",
+      "import": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/cjs/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "build",
+    "clean": "clean",
+    "dev": "build -s",
+    "format": "format",
+    "formatcheck": "format -c",
+    "lint": "lint",
+    "test": "echo \"@libs/react-ts-component has no unit tests\"; exit 0;",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": ""
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@dopt/config": "1.1.0",
+    "@pkg-tools/pkg-tools": "workspace:*",
+    "@types/react": "18.2.12",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2"
+  }
+}
