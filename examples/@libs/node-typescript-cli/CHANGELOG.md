@@ -1,5 +1,11 @@
 # @libs/node-typescript-cli
 
+## 0.0.3
+
+### Patch Changes
+
+- 1f71ca9: Rename the configuration file from `pkg.config.ts` to `pkg-tools.config.ts`.
+
 ## 0.0.2
 
 ### Patch Changes
