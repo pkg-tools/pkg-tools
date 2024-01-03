@@ -35,7 +35,7 @@ By default `clean` removes the `./dist` directory. If you need to clean a differ
 }
 ```
 
-Alternatively, you can configre clean using the a `pkg.config.ts` configuration. See the next section.
+Alternatively, you can configre clean using the a `pkg-tools.config.ts` configuration. See the next section.
 
 ### Configuration
 
@@ -52,7 +52,7 @@ yarn add -D @pkg-tools/config
 npm install -D @pkg-tools/config
 ```
 
-Define a `pkg.config.ts` in the root of your package and add the following.
+Define a `pkg-tools.config.ts` in the root of your package and add the following.
 
 ```ts
 import { definePkgToolsConfig } from '@pkg-tools/config';

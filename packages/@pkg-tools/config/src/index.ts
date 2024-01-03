@@ -103,7 +103,7 @@ function resolvePkgToolsConfig() {
   const rootDir = path.resolve(process.cwd(), '.');
 
   const pkgToolsConfig: PkgToolsConfig =
-    tryRequire('./pkg.config', rootDir) || {};
+    tryRequire('./pkg-tools.config', rootDir) || {};
 
   return pkgToolsConfig;
 }
