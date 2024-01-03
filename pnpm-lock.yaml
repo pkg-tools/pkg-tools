@@ -101,6 +101,25 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
 
+  examples/@libs/node-typescript-esm-cjs:
+    dependencies:
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+    devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@pkg-tools/pkg-tools':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/pkg-tools
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
   packages/@pkg-tools/build:
     dependencies:
       '@dopt/env':

@@ -1,0 +1,40 @@
+{
+  "name": "@libs/node-typescript-esm-cjs",
+  "private": true,
+  "version": "0.0.2",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs.js",
+      "import": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/cjs/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "build",
+    "clean": "clean",
+    "dev": "build -s",
+    "format": "format",
+    "formatcheck": "format -c",
+    "lint": "lint",
+    "test": "echo \"@libs/node-typescript-cli has no unit tests\"; exit 0;",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": ""
+  },
+  "dependencies": {
+    "citty": "0.1.5",
+    "consola": "3.2.3"
+  },
+  "devDependencies": {
+    "@dopt/config": "1.1.0",
+    "@pkg-tools/pkg-tools": "workspace:*",
+    "typescript": "5.3.3"
+  }
+}
