@@ -29,6 +29,8 @@ Create an opinionated toolchain for the most common TS package tasks. Each tool 
 - Be configurable via a single typed configuration file (`pkg-tools.config.ts`)
 - Usable individually or via a monolithic package
 
+Check out the [examples](./examples) to see pkg-tools in action!
+
 ## 🛠️ Tools
 
 Below is the family of tools the comprise pkg-tools.
