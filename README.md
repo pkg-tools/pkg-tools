@@ -6,69 +6,43 @@
 
 🚧 This project is in beta. 🚧
 
-## 💭 What if...
+### 🚩 Problem
 
-The non-`./src` bits of your TypeScript packages were dead simple.
+The toolchain necessary to build TypeScript packages is quite complicated.
 
-I'm talking about **building**, **deving**, **linting**, **formatting**, **cleaning**, **publishing**, etc.
+I'm talking about the libraries, configuration, and package scripts necessary do the following.
 
-The work required to make the underlying source code useful.
+- build
+- dev
+- lint
+- format
+- clean
 
-There are tons of libraries out there that can help you do this, but choosing the right one can be dauting. Once you've made your choice, you need to configure the tool (typically via dotfiles and the like) and define your usage in package scripts.
+The complexity is a function of the growing number of target runtimes, the sheer variety of what might be in those packages, and the voltaility of the JS/TS ecosystem.
 
-This can be onerous.
+### 🎯Goal
 
-But what if you could install one tool to do the job, a tool with a **single configuration file**, written in **TypeScript** so that all your configuration options were typed.
+Create an opinionated toolchain for the most common TS package tasks. Each tool should do the following.
 
-And what if that meant that the relevant bits of your `package.json` could look like below.
-
-```json
-"scripts": {
-  "build": "build",
-  "clean": "clean",
-  "dev": "build -s",
-  "format": "format",
-  "lint": "lint"
-},
-"devDependencies": {
-  "@pkg-tools/pkg-tools": "1.0.0",
-}
-```
-
-With a single `pkg.config.ts` file at the root of your package that looks like this.
-
-```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
-
-export default definePkgToolsConfig({
-  build: {...},
-  format: {...},
-  clean: {...},
-  lint: {...},
-});
-```
-
-## 💡Goal
-
-Create a tool per-typical/common TypesScript package task. Each tool should do the following.
-
-- Wrap the best-of-breed tool for the task
-- Expose a CLI for usage in package scripts and a function for programmatic usage
-- Be configurable in the `pkg.config.ts`
-- Be accessible via an individual package (e.g. `@pkg-tools/build` or via a monolitic package `import { build } from '@pkg-tools/pkg-tools'`
+- Wrap the modern best-of-breed tool for the task
+- Be usable as a CLI or programmatically
+- Be configurable via a single typed configuration file (`pkg-tools.config.ts`)
+- Usable individually or via a monolithic package
 
 ## 🛠️ Tools
 
 Below is the family of tools the comprise pkg-tools.
 
-| Package                                                     | Status |                                                                           Version | Downloads                                                                               |
-| ----------------------------------------------------------- | :----: | --------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------- |
-| **[@pkg-tools/pkg-tools](./packages/@pkg-tools/pkg-tools)** |   🟢   | [![@pkg-tools/pkg-tools::version][pkg-tools-version-src]][pkg-tools-version-href] | [![@pkg-tools/pkg-tools::downloads][pkg-tools-downloads-src]][pkg-tools-downloads-href] |
-| **[@pkg-tools/build](./packages/@pkg-tools/build)**         |   🟢   |             [![@pkg-tools/build::version][build-version-src]][build-version-href] | [![@pkg-tools/build::downloads][build-downloads-src]][build-downloads-href]             |
-| **[@pkg-tools/clean](./packages/@pkg-tools/clean)**         |   🟢   |             [![@pkg-tools/clean::version][clean-version-src]][clean-version-href] | [![@pkg-tools/clean::downloads][clean-downloads-src]][clean-downloads-href]             |
-| **[@pkg-tools/format](./packages/@pkg-tools/format)**       |   🟢   |          [![@pkg-tools/format::version][format-version-src]][format-version-href] | [![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href]          |
-| **[@pkg-tools/lint](./packages/@pkg-tools/lint)**           |   🟢   |                [![@pkg-tools/lint::version][lint-version-src]][lint-version-href] | [![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]                |
-| **[@pkg-tools/sync](./packages/@pkg-tools/sync)**           |   🟡   |                [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]                |
+| Package                                               |  CLI(s)  |                                                                   Library                                                                    | Status |                                                                  Version | Downloads                                                                      |
+| ----------------------------------------------------- | :------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :----: | -----------------------------------------------------------------------: | ------------------------------------------------------------------------------ |
+| **[@pkg-tools/build](./packages/@pkg-tools/build)**   | `build`  |                                                  [unbuild](https://github.com/unjs/unbuild)                                                  |   🟢   |    [![@pkg-tools/build::version][build-version-src]][build-version-href] | [![@pkg-tools/build::downloads][build-downloads-src]][build-downloads-href]    |
+| **[@pkg-tools/clean](./packages/@pkg-tools/clean)**   | `clean`  |                                                [shelljs](https://github.com/shelljs/shelljs)                                                 |   🟢   |    [![@pkg-tools/clean::version][clean-version-src]][clean-version-href] | [![@pkg-tools/clean::downloads][clean-downloads-src]][clean-downloads-href]    |
+| **[@pkg-tools/format](./packages/@pkg-tools/format)** | `format` |                                                       [prettier](https://prettier.io/)                                                       |   🟢   | [![@pkg-tools/format::version][format-version-src]][format-version-href] | [![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href] |
+| **[@pkg-tools/lint](./packages/@pkg-tools/lint)**     |  `lint`  |                                                        [eslint](https://eslint.org/)                                                         |   🟢   |       [![@pkg-tools/lint::version][lint-version-src]][lint-version-href] | [![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]       |
+| **[@pkg-tools/sync](./packages/@pkg-tools/sync)**     |  `sync`  |                                                [oktokit](https://github.com/octokit/rest.js)                                                 |   🟡   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
+| **[@pkg-tools/sort](./packages/@pkg-tools/sort)**     |  `sort`  | [oranize-imports](https://www.npmjs.com/package/organize-imports-cli) / [sort-pacakge-json](https://www.npmjs.com/package/sort-package-json) |   🔴   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
+
+All of the tools and their CLIs are re-exported via a monolithic package called **[@pkg-tools/pkg-tools](./packages/@pkg-tools/pkg-tools)**.
 
 ## Usage
 
@@ -84,20 +58,20 @@ pnpm add -D @pkg-tools/pkg-tool
 yarn add -D @pkg-tools/pkg-tool
 
 # npm
-npm install @pkg-tools/pkg-tool --save-dev
+npm install -D @pkg-tools/pkg-tool --save-dev
 ```
 
 or select individual packages e.g.
 
 ```sh
 # pnpm
-pnpm add -D @pkg-tools/build @pkg-tools/format
+pnpm add -D @pkg-tools/build @pkg-tools/format @pkg-tools/config
 
 # yarn
-yarn add -D @pkg-tools/build @pkg-tools/format
+yarn add -D @pkg-tools/build @pkg-tools/format @pkg-tools/config
 
 # npm
-npm install @pkg-tools/build @pkg-tools/format --save-dev
+npm install -D @pkg-tools/build @pkg-tools/format @pkg-tools/config
 ```
 
 **Import:**
@@ -116,28 +90,15 @@ Use the CLIs provided by the pacakge(s) in your package scripts.
 
 **Configuration:**
 
-Define a `pkg.config.ts` in the root of your package and add the following.
-
-```ts
-/* via monolithic package */
-import { config } from '@pkg-tools/pkg-tools';
-export default config.definePkgToolsConfig({
-  build: {...},
-  format: {...},
-  clean: {...},
-  lint: {...},
-});
-```
-
-If not using the monolithic package you need to install `@pkg-tools/config`. In this case your config will look like the following.
+Define a `pkg-tools.config.ts` in the root of your package and add the following.
 
 ```ts
 import { definePkgToolsConfig } from '@pkg-tools/config';
 
 export default definePkgToolsConfig({
   build: {...},
-  format: {...},
   clean: {...},
+  format: {...},
   lint: {...},
 });
 
