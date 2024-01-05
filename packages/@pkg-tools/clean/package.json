@@ -12,13 +12,13 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
     }
   },
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "bin": "./cli.js",
   "files": [
     "cli.js",
@@ -39,10 +39,10 @@
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/clean\""
   },
   "dependencies": {
+    "@pkg-tools/config": "workspace:*",
     "citty": "0.1.5",
     "consola": "3.2.3",
-    "shelljs": "0.8.5",
-    "@pkg-tools/config": "workspace:*"
+    "shelljs": "0.8.5"
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
@@ -52,6 +52,7 @@
     "eslint": "8.56.0",
     "eslint-plugin-react": "7.33.2",
     "prettier": "3.1.1",
+    "publint": "^0.2.7",
     "shx": "0.3.4",
     "sort-package-json": "^2.6.0",
     "typescript": "5.3.3",
