@@ -1,5 +1,17 @@
 # @pkg-tools/pkg-tools
 
+## 0.0.4
+
+### Patch Changes
+
+- fff6813: Update exports based on publint guidance.
+- Updated dependencies [fff6813]
+  - @pkg-tools/config@0.0.6
+  - @pkg-tools/format@0.0.6
+  - @pkg-tools/build@0.0.6
+  - @pkg-tools/clean@0.0.6
+  - @pkg-tools/lint@0.0.6
+
 ## 0.0.3
 
 ### Patch Changes

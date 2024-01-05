@@ -1,5 +1,11 @@
 # @libs/node-typescript-cli
 
+## 0.0.4
+
+### Patch Changes
+
+- fff6813: Update exports based on publint guidance.
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @pkg-tools/clean
 
+## 0.0.6
+
+### Patch Changes
+
+- fff6813: Update exports based on publint guidance.
+- Updated dependencies [fff6813]
+  - @pkg-tools/config@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes

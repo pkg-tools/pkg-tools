@@ -1,5 +1,11 @@
 # @pkg-tools/sync
 
+## 0.0.5
+
+### Patch Changes
+
+- fff6813: Update exports based on publint guidance.
+
 ## 0.0.4
 
 ### Patch Changes

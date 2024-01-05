@@ -1,5 +1,11 @@
 # @pkg-tools/config
 
+## 0.0.6
+
+### Patch Changes
+
+- fff6813: Update exports based on publint guidance.
+
 ## 0.0.5
 
 ### Patch Changes
