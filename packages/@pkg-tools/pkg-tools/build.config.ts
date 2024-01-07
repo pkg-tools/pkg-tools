@@ -2,13 +2,13 @@ import { defineBuildConfig } from 'unbuild';
 
 export default defineBuildConfig({
   entries: ['src/index'],
-  clean: true,
   rollup: {
     inlineDependencies: true,
+    emitCJS: true,
     esbuild: {
-      target: 'ESNext',
+      target: 'node16',
       minify: true,
     },
   },
-  declaration: true,
+  declaration: 'node16',
 });
