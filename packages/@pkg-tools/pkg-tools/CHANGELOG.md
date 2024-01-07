@@ -1,5 +1,19 @@
 # @pkg-tools/pkg-tools
 
+## 0.1.0
+
+### Minor Changes
+
+- 14d51e3: Make the monolith package's re-export of the CLIs portable by adding a ./cli export to the package.json exports of all the CLI packages.
+
+### Patch Changes
+
+- Updated dependencies [14d51e3]
+  - @pkg-tools/format@0.1.0
+  - @pkg-tools/build@0.1.0
+  - @pkg-tools/clean@0.1.0
+  - @pkg-tools/lint@0.1.0
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @pkg-tools/sync
 
+## 0.1.0
+
+### Minor Changes
+
+- 14d51e3: Make the monolith package's re-export of the CLIs portable by adding a ./cli export to the package.json exports of all the CLI packages.
+
 ## 0.0.5
 
 ### Patch Changes
