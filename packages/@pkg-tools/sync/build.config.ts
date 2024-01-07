@@ -2,6 +2,7 @@ import { defineBuildConfig } from "unbuild";
 
 export default defineBuildConfig([
   {
+    failOnWarn: false,
     entries: ["src/index"],
     rollup: {
       inlineDependencies: true,
@@ -14,6 +15,7 @@ export default defineBuildConfig([
     declaration: "node16",
   },
   {
+    failOnWarn: false,
     entries: ["src/cli"],
     rollup: {
       inlineDependencies: true,

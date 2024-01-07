@@ -25,12 +25,16 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "bin": {
-    "build": "./node_modules/.bin/build",
-    "clean": "./node_modules/.bin/clean",
-    "format": "./node_modules/.bin/format",
-    "lint": "./node_modules/.bin/lint"
+    "build": "./build.js",
+    "clean": "./clean.js",
+    "format": "./format.js",
+    "lint": "./lint.js"
   },
   "files": [
+    "build.js",
+    "clean.js",
+    "format.js",
+    "lint.js",
     "dist"
   ],
   "scripts": {
