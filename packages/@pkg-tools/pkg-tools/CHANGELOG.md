@@ -1,5 +1,16 @@
 # @pkg-tools/pkg-tools
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [65711ce]
+  - @pkg-tools/config@0.1.0
+  - @pkg-tools/build@0.1.1
+  - @pkg-tools/clean@0.1.1
+  - @pkg-tools/format@0.1.1
+  - @pkg-tools/lint@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
