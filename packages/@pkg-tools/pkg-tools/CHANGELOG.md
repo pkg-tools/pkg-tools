@@ -1,5 +1,15 @@
 # @pkg-tools/pkg-tools
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [0dc0e93]
+  - @pkg-tools/format@0.2.0
+  - @pkg-tools/build@0.2.0
+  - @pkg-tools/clean@0.2.0
+  - @pkg-tools/lint@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes

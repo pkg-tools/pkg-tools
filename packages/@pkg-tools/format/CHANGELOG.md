@@ -1,5 +1,11 @@
 # @pkg-tools/format
 
+## 0.2.0
+
+### Minor Changes
+
+- 0dc0e93: Remove the pre-configured builds in favor of being explicit. Update all consumers + update examples to use the editor-friendly lint/format configs.
+
 ## 0.1.1
 
 ### Patch Changes
