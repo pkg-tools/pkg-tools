@@ -15,7 +15,6 @@ export default defineBuildConfig([
     declaration: 'node16',
   },
   {
-    failOnWarn: false,
     entries: ['src/cli'],
     rollup: {
       inlineDependencies: true,

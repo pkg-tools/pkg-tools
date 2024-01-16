@@ -1,40 +1,44 @@
 {
-  "name": "@libs/node-typescript-cli",
-  "private": true,
-  "version": "0.0.4",
-  "type": "module",
-  "exports": {
-    "import": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
+    "name": "@libs/node-typescript-cli",
+    "private": true,
+    "version": "0.0.4",
+    "type": "module",
+    "exports": {
+        "import": {
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+        }
+    },
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
+    "bin": "./cli.js",
+    "files": [
+        "cli.js",
+        "dist"
+    ],
+    "scripts": {
+        "👇required package scripts": "",
+        "build": "build",
+        "clean": "clean",
+        "dev": "build -s",
+        "format": "format",
+        "formatcheck": "format -c",
+        "lint": "lint",
+        "test": "echo \"@libs/node-typescript-cli has no unit tests\"; exit 0;",
+        "typecheck": "tsc --noEmit",
+        "☝️ required package scripts": ""
+    },
+    "dependencies": {
+        "citty": "0.1.5",
+        "consola": "3.2.3"
+    },
+    "devDependencies": {
+        "@dopt/config": "1.1.0",
+        "@pkg-tools/build": "0.1.1",
+        "@pkg-tools/clean": "0.1.1",
+        "@pkg-tools/config": "0.1.0",
+        "@pkg-tools/format": "0.1.1",
+        "@pkg-tools/lint": "0.1.1",
+        "typescript": "5.3.3"
     }
-  },
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "bin": "./cli.js",
-  "files": [
-    "cli.js",
-    "dist"
-  ],
-  "scripts": {
-    "👇required package scripts": "",
-    "build": "build",
-    "clean": "clean",
-    "dev": "build -s",
-    "format": "format",
-    "formatcheck": "format -c",
-    "lint": "lint",
-    "test": "echo \"@libs/node-typescript-cli has no unit tests\"; exit 0;",
-    "typecheck": "tsc --noEmit",
-    "☝️ required package scripts": ""
-  },
-  "dependencies": {
-    "citty": "0.1.5",
-    "consola": "3.2.3"
-  },
-  "devDependencies": {
-    "@dopt/config": "1.1.0",
-    "@pkg-tools/pkg-tools": "workspace:*",
-    "typescript": "5.3.3"
-  }
 }
