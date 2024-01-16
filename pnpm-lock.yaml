@@ -94,9 +94,21 @@ importers:
       '@dopt/config':
         specifier: 1.1.0
         version: 1.1.0
-      '@pkg-tools/pkg-tools':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/pkg-tools
+      '@pkg-tools/build':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: 0.1.0
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/lint
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -113,12 +125,21 @@ importers:
       '@dopt/config':
         specifier: 1.1.0
         version: 1.1.0
-      '@pkg-tools/pkg-tools':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/pkg-tools
-      publint:
-        specifier: ^0.2.7
-        version: 0.2.7
+      '@pkg-tools/build':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: 0.1.0
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/lint
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -132,9 +153,21 @@ importers:
       '@dopt/config':
         specifier: 1.1.0
         version: 1.1.0
-      '@pkg-tools/pkg-tools':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/pkg-tools
+      '@pkg-tools/build':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: 0.1.0
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: 0.1.1
+        version: link:../../../packages/@pkg-tools/lint
       '@types/react':
         specifier: 18.2.12
         version: 18.2.12
