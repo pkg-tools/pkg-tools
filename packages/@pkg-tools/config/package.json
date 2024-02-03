@@ -42,13 +42,10 @@
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/config\""
   },
   "dependencies": {
-    "consola": "3.2.3",
-    "defu": "^6.1.3",
-    "eslint": "8.56.0",
-    "eslint-define-config": "^2.1.0",
-    "jiti": "^1.21.0",
-    "prettier": "3.1.1",
-    "unbuild": "2.0.0"
+    "@pkg-tools/clean": "workspace:*",
+    "@pkg-tools/format": "workspace:*",
+    "@pkg-tools/build": "workspace:*",
+    "@pkg-tools/lint": "workspace:*"
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
@@ -60,6 +57,7 @@
     "publint": "^0.2.7",
     "shx": "0.3.4",
     "sort-package-json": "^2.6.0",
+    "unbuild": "2.0.0",
     "typescript": "5.3.3"
   }
 }

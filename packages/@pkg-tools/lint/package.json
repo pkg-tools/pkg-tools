@@ -22,6 +22,16 @@
         "default": "./dist/index.cjs"
       }
     },
+    "./config": {
+      "import": {
+        "types": "./dist/config.d.mts",
+        "default": "./dist/config.mjs"
+      },
+      "require": {
+        "types": "./dist/config.d.cts",
+        "default": "./dist/config.cjs"
+      }
+    },
     "./cli": {
       "import": {
         "default": "./dist/cli.mjs"
