@@ -17,7 +17,6 @@ const main = defineCommand({
   },
   args: {
     check: {
-      alias: 'c',
       type: 'boolean',
       description: 'Whether to write the results',
       required: false,
