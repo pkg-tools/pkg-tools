@@ -1,5 +1,5 @@
 import defu from 'defu';
-import { resolvePkgToolsConfig } from '@pkg-tools/config';
+import { resolvePkgToolsConfig } from '@pkg-tools/utilities';
 
 export interface Config {
   directory: string;
