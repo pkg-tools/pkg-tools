@@ -7,6 +7,8 @@ import { format, check } from '.';
 
 import { name, version, description } from '../package.json';
 
+import { getConfig } from './config';
+
 const main = defineCommand({
   meta: {
     name,
@@ -23,11 +25,13 @@ const main = defineCommand({
   },
   async run({ args }) {
     const packageRoot = path.resolve(process.cwd());
+
+    const config = getConfig({});
     try {
-      if (args.c || args.check) {
-        await check(packageRoot);
+      if (args.check) {
+        await check(packageRoot, config);
       } else {
-        await format(packageRoot);
+        await format(packageRoot, config);
       }
     } catch (error) {
       console.error(`Error formatting source in ${packageRoot}: ${error}`);
