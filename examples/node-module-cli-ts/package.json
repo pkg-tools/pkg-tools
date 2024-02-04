@@ -1,5 +1,5 @@
 {
-    "name": "@libs/node-typescript-cli",
+    "name": "node-module-cli-ts",
     "private": true,
     "version": "0.1.0",
     "type": "module",
@@ -24,7 +24,7 @@
         "format": "format",
         "formatcheck": "format -c",
         "lint": "lint",
-        "test": "echo \"@libs/node-typescript-cli has no unit tests\"; exit 0;",
+        "test": "echo \"node-module-cli-ts\" has no unit tests\"; exit 0;",
         "typecheck": "tsc --noEmit",
         "☝️ required package scripts": ""
     },
