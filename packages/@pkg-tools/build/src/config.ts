@@ -17,7 +17,7 @@ export const defaults: BuildConfig = {
   declaration: "node16",
 };
 
-export function getConfig(config: Partial<Config>): Config {
+export function getConfig(config: Partial<Config>): BuildConfig[] {
   const pkgToolsConfig = resolvePkgToolsConfig()["build"] as Config;
 
   /*
