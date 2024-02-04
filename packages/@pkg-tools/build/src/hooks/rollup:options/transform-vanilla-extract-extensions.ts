@@ -9,7 +9,7 @@ export function transformVanillaExtractExtensions(
   options: Props[1],
 ) {
   if (Array.isArray(options.plugins)) {
-    //@ts-ignore
+    //@ts-expect-ignore
     options.plugins = [...options.plugins, vanillaExtractPlugin()];
   }
 

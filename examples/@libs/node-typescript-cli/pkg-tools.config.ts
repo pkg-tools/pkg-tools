@@ -1,6 +1,6 @@
-import { definePkgToolsConfig } from "@pkg-tools/config"
+import { defineConfig } from "@pkg-tools/config"
 
-export default definePkgToolsConfig({
+export default defineConfig({
     build: [
         {
             failOnWarn: false,

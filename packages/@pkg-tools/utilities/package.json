@@ -1,24 +1,26 @@
 {
-  "name": "@pkg-tools/config",
-  "version": "0.1.0",
+  "name": "@pkg-tools/utilities",
+  "version": "0.2.0",
   "private": false,
-  "description": "A unified configuration layer for pkg-tools",
+  "description": "A set of utilities used by @pkg-tools/*",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
   "repository": {
     "type": "git",
     "url": "https://github.com/pkg-tools/pkg-tools.git",
-    "directory": "packages/@pkg-tools/config"
+    "directory": "packages/@pkg-tools/utilities"
   },
   "license": "MIT",
   "type": "module",
   "exports": {
-    "import": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
-    },
-    "require": {
-      "types": "./dist/index.d.cts",
-      "default": "./dist/index.cjs"
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "main": "./dist/index.cjs",
@@ -36,27 +38,25 @@
     "formatcheck": "prettier -c .",
     "lint": "eslint .",
     "sort": "sort-package-json",
-    "test": "echo \"@pkg-tools/config does not require test\"; exit 0;",
+    "test": "echo \"@pkg-tools/clean does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/config\""
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/utilities\""
   },
   "dependencies": {
-    "@pkg-tools/clean": "workspace:*",
-    "@pkg-tools/format": "workspace:*",
-    "@pkg-tools/build": "workspace:*",
-    "@pkg-tools/lint": "workspace:*"
+    "jiti": "1.21.0"
   },
   "devDependencies": {
     "@types/shelljs": "0.8.15",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
+    "eslint": "8.56.0",
     "eslint-plugin-react": "7.33.2",
     "prettier": "3.1.1",
     "publint": "^0.2.7",
     "shx": "0.3.4",
     "sort-package-json": "^2.6.0",
-    "unbuild": "2.0.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "unbuild": "2.0.0"
   }
 }

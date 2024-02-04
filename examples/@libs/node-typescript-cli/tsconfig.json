@@ -1,11 +1,16 @@
 {
-    "extends": "@dopt/config/tsconfig/node.json",
     "compilerOptions": {
-        "moduleResolution": "Node",
-        "resolveJsonModule": true,
-        "noEmit": false,
+        "declaration": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "allowSyntheticDefaultImports": true,
+        "noEmit": true,
         "outDir": "dist",
-        "rootDir": "."
+        "resolveJsonModule": true,
+        "rootDir": ".",
+        "skipLibCheck": true
     },
     "exclude": ["node_modules", "dist", "build.config.ts"],
     "include": ["**/*.ts", "**/*.tsx"]

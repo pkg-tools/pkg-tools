@@ -7,6 +7,7 @@ import { lint } from '.';
 
 import consola from 'consola';
 import { name, version, description } from '../package.json';
+import { getConfig } from './config';
 
 const main = defineCommand({
   meta: {
@@ -25,13 +26,17 @@ const main = defineCommand({
   async run({ args }) {
     const packageRoot = path.resolve(process.cwd());
 
-    const ignore = (args.ignore || '')
+    const ignorePatterns = (args.ignore || '')
       .trim()
       .split(',')
       .filter((i) => i);
 
+    const config = getConfig({
+      ignorePatterns,
+    });
+
     try {
-      lint({ directory: packageRoot, ignore });
+      lint(packageRoot, config);
     } catch (error) {
       consola.error(`Error linting source in ${packageRoot}: ${error}`);
     }

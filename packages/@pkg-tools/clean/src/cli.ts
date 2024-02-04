@@ -7,7 +7,7 @@ import { rm } from '.';
 
 import consola from 'consola';
 import { name, version, description } from '../package.json';
-import { getCleanConfig } from '@pkg-tools/config';
+import { getConfig } from './config';
 
 const main = defineCommand({
   meta: {
@@ -24,14 +24,9 @@ const main = defineCommand({
     },
   },
   async run({ args }) {
-    const cleanConfig = getCleanConfig();
-
-    const directory = path.resolve(
-      process.cwd(),
-      args.directory || cleanConfig.directory
-    );
+    const { directory } = getConfig(args);
     try {
-      rm(directory);
+      rm(path.resolve(process.cwd(), directory));
     } catch (error) {
       consola.error(`Error removing ${directory}: ${error}`);
     }
