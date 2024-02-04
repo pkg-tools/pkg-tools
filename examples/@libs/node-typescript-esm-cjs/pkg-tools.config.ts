@@ -1,5 +1,5 @@
 import { defineConfig } from '@pkg-tools/config';
-import { hooks } from '@pkg-tools/build'
+import { hooks } from '@pkg-tools/build';
 
 export default defineConfig({
   build: {
