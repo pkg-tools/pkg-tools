@@ -1,8 +1,10 @@
 {
   "extends": "@dopt/config/tsconfig/react-library.json",
   "compilerOptions": {
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
     "outDir": "./dist",
-    "rootDir": ""
+    "rootDir": "."
   },
   "exclude": ["node_modules", "dist"],
   "include": ["**/*.ts", "**/*.tsx"]

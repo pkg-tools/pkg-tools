@@ -1,7 +1,7 @@
-import { definePkgToolsConfig } from '@pkg-tools/config';
+import { defineConfig } from '@pkg-tools/config';
 import { hooks } from '@pkg-tools/build';
 
-export default definePkgToolsConfig({
+export default defineConfig({
   build: {
     entries: ['src/index'],
     rollup: {
