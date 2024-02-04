@@ -45,7 +45,69 @@ importers:
         specifier: 1.11.2
         version: 1.11.2
 
-  examples/@apps/vite-react-ts:
+  examples/node-module-cli-ts:
+    dependencies:
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+    devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@pkg-tools/build':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/lint
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
+  examples/node-module-ts:
+    dependencies:
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+    devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@pkg-tools/build':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/lint
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
+  examples/react-app-vite-ts:
     dependencies:
       react:
         specifier: ^18.2.0
@@ -56,13 +118,13 @@ importers:
     devDependencies:
       '@pkg-tools/clean':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/clean
+        version: link:../../packages/@pkg-tools/clean
       '@pkg-tools/format':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/format
+        version: link:../../packages/@pkg-tools/format
       '@pkg-tools/lint':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/lint
+        version: link:../../packages/@pkg-tools/lint
       '@types/react':
         specifier: ^18.2.43
         version: 18.2.46
@@ -79,69 +141,7 @@ importers:
         specifier: ^5.0.8
         version: 5.0.10(@types/node@18.16.18)
 
-  examples/@libs/node-typescript-cli:
-    dependencies:
-      citty:
-        specifier: 0.1.5
-        version: 0.1.5
-      consola:
-        specifier: 3.2.3
-        version: 3.2.3
-    devDependencies:
-      '@dopt/config':
-        specifier: 1.1.0
-        version: 1.1.0
-      '@pkg-tools/build':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/build
-      '@pkg-tools/clean':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/clean
-      '@pkg-tools/config':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/config
-      '@pkg-tools/format':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/format
-      '@pkg-tools/lint':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/lint
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
-
-  examples/@libs/node-typescript-esm-cjs:
-    dependencies:
-      citty:
-        specifier: 0.1.5
-        version: 0.1.5
-      consola:
-        specifier: 3.2.3
-        version: 3.2.3
-    devDependencies:
-      '@dopt/config':
-        specifier: 1.1.0
-        version: 1.1.0
-      '@pkg-tools/build':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/build
-      '@pkg-tools/clean':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/clean
-      '@pkg-tools/config':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/config
-      '@pkg-tools/format':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/format
-      '@pkg-tools/lint':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/lint
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
-
-  examples/@libs/react-ts-component:
+  examples/react-component-ts:
     dependencies:
       react:
         specifier: '>=17.0.2'
@@ -149,19 +149,19 @@ importers:
     devDependencies:
       '@pkg-tools/build':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/build
+        version: link:../../packages/@pkg-tools/build
       '@pkg-tools/clean':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/clean
+        version: link:../../packages/@pkg-tools/clean
       '@pkg-tools/config':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/config
+        version: link:../../packages/@pkg-tools/config
       '@pkg-tools/format':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/format
+        version: link:../../packages/@pkg-tools/format
       '@pkg-tools/lint':
         specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/lint
+        version: link:../../packages/@pkg-tools/lint
       '@types/react':
         specifier: 18.2.12
         version: 18.2.12

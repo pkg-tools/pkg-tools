@@ -1,26 +1,18 @@
 {
-  "name": "@libs/node-typescript-esm-cjs",
+  "name": "react-component-ts",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.esm.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/cjs/index.cjs.js"
-      }
+      "require": "./dist/cjs/index.cjs.js",
+      "import": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "main": "./dist/cjs/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "👇required package scripts": "",
     "build": "build",
@@ -29,21 +21,24 @@
     "format": "format",
     "formatcheck": "format -c",
     "lint": "lint",
-    "test": "echo \"@libs/node-typescript-cli has no unit tests\"; exit 0;",
+    "test": "echo \"react-component-ts\" has no unit tests\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": ""
   },
-  "dependencies": {
-    "citty": "0.1.5",
-    "consola": "3.2.3"
-  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
   "devDependencies": {
-    "@dopt/config": "1.1.0",
     "@pkg-tools/build": "workspace:*",
     "@pkg-tools/clean": "workspace:*",
     "@pkg-tools/config": "workspace:*",
     "@pkg-tools/format": "workspace:*",
     "@pkg-tools/lint": "workspace:*",
-    "typescript": "5.3.3"
+    "@types/react": "18.2.12",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2"
   }
 }

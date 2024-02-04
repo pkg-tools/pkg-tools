@@ -1,5 +1,5 @@
 {
-  "name": "@apps/vite-react-ts",
+  "name": "react-app-vite-ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "format": "format",
     "formatcheck": "format -c",
     "lint": "lint",
-    "test": "echo \"@apps/vite-react-ts has no unit tests\"; exit 0;",
+    "test": "echo \"react-app-vite-ts\" has no unit tests\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
     "preview": "vite preview"
