@@ -297,9 +297,6 @@ importers:
         specifier: workspace:*
         version: link:../lint
     devDependencies:
-      '@dopt/config':
-        specifier: 1.1.0
-        version: 1.1.0
       '@types/shelljs':
         specifier: 0.8.15
         version: 0.8.15
@@ -514,9 +511,6 @@ importers:
       '@dopt/check-formatting':
         specifier: 1.0.0
         version: 1.0.0
-      '@dopt/config':
-        specifier: 1.1.0
-        version: 1.1.0
       '@types/micromatch':
         specifier: ^4.0.2
         version: 4.0.6
@@ -548,9 +542,6 @@ importers:
         specifier: 1.21.0
         version: 1.21.0
     devDependencies:
-      '@dopt/config':
-        specifier: 1.1.0
-        version: 1.1.0
       '@types/shelljs':
         specifier: 0.8.15
         version: 0.8.15
