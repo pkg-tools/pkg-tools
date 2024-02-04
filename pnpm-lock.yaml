@@ -20,9 +20,6 @@ importers:
       '@commitlint/lint':
         specifier: 18.4.3
         version: 18.4.3
-      '@dopt/config':
-        specifier: 1.1.0
-        version: 1.1.0
       '@dopt/wutils':
         specifier: 1.0.0
         version: 1.0.0

@@ -24,7 +24,6 @@
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
     "@commitlint/lint": "18.4.3",
-    "@dopt/config": "1.1.0",
     "@dopt/wutils": "1.0.0",
     "commitizen": "4.3.0",
     "commitlint-plugin-function-rules": "3.0.0",
