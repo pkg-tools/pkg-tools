@@ -3,9 +3,9 @@ import { resolvePkgToolsConfig } from "@pkg-tools/utilities";
 
 import { type BuildConfig } from "unbuild";
 
-export interface Config extends BuildConfig {}
+export type Config = BuildConfig | BuildConfig[];
 
-export const defaults: Config = {
+export const defaults: BuildConfig = {
   entries: ["src/index"],
   rollup: {
     emitCJS: true,
@@ -17,8 +17,8 @@ export const defaults: Config = {
   declaration: "node16",
 };
 
-export function getConfig(config: Partial<Config>): Config[] {
-  const pkgToolsConfig = resolvePkgToolsConfig()["build"];
+export function getConfig(config: Partial<Config>): Config {
+  const pkgToolsConfig = resolvePkgToolsConfig()["build"] as Config;
 
   /*
    * If you provide multiple build configurations we

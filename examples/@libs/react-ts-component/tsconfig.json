@@ -1,8 +1,9 @@
 {
-  "extends": "@dopt/config/tsconfig/react-library.json",
   "compilerOptions": {
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext",
+    "jsx": "react-jsx",
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
     "outDir": "./dist",
     "rootDir": "."
   },

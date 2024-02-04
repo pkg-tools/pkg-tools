@@ -1,2 +1,4 @@
-const { getFormatConfig } = require('@pkg-tools/config');
-module.exports = getFormatConfig();
+const { getConfig } = require('@pkg-tools/format/config');
+module.exports = {
+  ...getConfig(),
+};
