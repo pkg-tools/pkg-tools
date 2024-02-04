@@ -6,7 +6,7 @@ type Props = Parameters<BuildHooks["rollup:options"]>;
 
 export function transformVanillaExtractExtensions(
   _: Props[0],
-  options: Props[1]
+  options: Props[1],
 ) {
   if (Array.isArray(options.plugins)) {
     //@ts-expect-ignore

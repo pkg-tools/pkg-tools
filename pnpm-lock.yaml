@@ -174,9 +174,6 @@ importers:
 
   packages/@pkg-tools/build:
     dependencies:
-      '@dopt/env':
-        specifier: 1.0.0
-        version: 1.0.0
       '@pkg-tools/utilities':
         specifier: workspace:*
         version: link:../utilities

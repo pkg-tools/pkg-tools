@@ -58,7 +58,6 @@
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/build\""
   },
   "dependencies": {
-    "@dopt/env": "1.0.0",
     "@pkg-tools/utilities": "workspace:*",
     "@vanilla-extract/rollup-plugin": "1.3.0",
     "citty": "0.1.5",
