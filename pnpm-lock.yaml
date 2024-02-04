@@ -57,9 +57,6 @@ importers:
       '@pkg-tools/clean':
         specifier: workspace:*
         version: link:../../../packages/@pkg-tools/clean
-      '@pkg-tools/config':
-        specifier: workspace:*
-        version: link:../../../packages/@pkg-tools/config
       '@pkg-tools/format':
         specifier: workspace:*
         version: link:../../../packages/@pkg-tools/format

@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@pkg-tools/clean": "workspace:*",
-    "@pkg-tools/config": "workspace:*",
     "@pkg-tools/format": "workspace:*",
     "@pkg-tools/lint": "workspace:*",
     "@types/react": "^18.2.43",
