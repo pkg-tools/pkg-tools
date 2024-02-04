@@ -14,7 +14,7 @@ function tryRequire(id: string, rootDir: string = process.cwd()) {
   try {
     return _require(id);
   } catch (error: unknown) {
-    //@ts-ignore
+    //@ts-expect-error error typing
     if (error.code !== 'MODULE_NOT_FOUND') {
       console.error(`Error trying import ${id} from ${rootDir}`, error);
     }
