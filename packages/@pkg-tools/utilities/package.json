@@ -44,7 +44,6 @@
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/utilities\""
   },
   "dependencies": {
-    "@pkg-tools/config": "workspace:*",
     "jiti": "1.21.0"
   },
   "devDependencies": {

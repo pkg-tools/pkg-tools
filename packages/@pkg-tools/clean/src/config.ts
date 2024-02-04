@@ -9,6 +9,6 @@ export const defaults: Config = {
   directory: './dist',
 };
 
-export function getConfig(config: Partial<Config>): Config {
+export function getConfig(config: Config): Config {
   return defu(config, resolvePkgToolsConfig()['clean'], defaults);
 }

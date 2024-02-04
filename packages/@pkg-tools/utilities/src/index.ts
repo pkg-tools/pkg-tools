@@ -1,13 +1,10 @@
 import path from 'node:path';
 import jiti from 'jiti';
 
-import { type PkgToolsConfig } from '@pkg-tools/config';
-
 export function resolvePkgToolsConfig() {
   const rootDir = path.resolve(process.cwd(), '.');
 
-  const pkgToolsConfig: PkgToolsConfig =
-    tryRequire('./pkg-tools.config', rootDir) || {};
+  const pkgToolsConfig = tryRequire('./pkg-tools.config', rootDir) || {};
 
   return pkgToolsConfig;
 }
