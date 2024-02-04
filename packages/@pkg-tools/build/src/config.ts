@@ -1,12 +1,30 @@
 import defu from "defu";
 import { resolvePkgToolsConfig } from "@pkg-tools/utilities";
 
-import { type BuildConfig } from "unbuild";
+import { transformModernModuleExtensions } from "./hooks";
+
+import { type BuildConfig as UnbuildConfig } from "unbuild";
+
+interface BuildConfig extends UnbuildConfig {
+  /**
+   * Determines the file extensions for the build output. The `compatible`
+   * option is useful if building code that will bundled and run in the
+   * browser, where older bundling tools may not understand modern
+   * extensions.
+   *
+   * * `modern` - generated files will have either '.mjs' or '.cjs' extensions.
+   * * `compatible` - generated files will have '.js' extensions.
+   *
+   * Defaults to `modern`.
+   */
+  extensions?: "modern" | "compatible";
+}
 
 export type Config = BuildConfig | BuildConfig[];
 
 export const defaults: BuildConfig = {
   entries: ["src/index"],
+  extensions: "modern",
   rollup: {
     emitCJS: true,
     esbuild: {
@@ -18,15 +36,28 @@ export const defaults: BuildConfig = {
 };
 
 export function getConfig(config: Partial<Config>): BuildConfig[] {
-  const pkgToolsConfig = resolvePkgToolsConfig()["build"] as Config;
+  const _buildConfig = resolvePkgToolsConfig()["build"] as Config;
 
-  /*
-   * If you provide multiple build configurations we
-   * won't merge in any defaults.
-   */
-  if (Array.isArray(pkgToolsConfig)) {
-    return pkgToolsConfig;
-  }
+  const buildConfigs = Array.isArray(_buildConfig)
+    ? _buildConfig
+    : [_buildConfig];
 
-  return [defu(config, pkgToolsConfig, defaults)];
+  return buildConfigs.map((buildConfig) => {
+    const options = defu(config, buildConfig, defaults);
+    if (options.extensions === "modern") {
+      return options;
+    }
+    return {
+      ...options,
+      hooks: {
+        ...options.hooks,
+        "rollup:options": (ctx, opts) => {
+          transformModernModuleExtensions(ctx, opts);
+          if (options?.hooks && options.hooks["rollup:options"]) {
+            options.hooks["rollup:options"](ctx, opts);
+          }
+        },
+      },
+    };
+  });
 }
