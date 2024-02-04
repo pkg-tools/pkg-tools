@@ -1,10 +1,9 @@
 import { defineConfig } from '@pkg-tools/config';
-import { hooks } from '@pkg-tools/build';
-
 export default defineConfig({
   build: {
     entries: ['src/index'],
     sourcemap: true,
+    extensions: 'compatible',
     rollup: {
       inlineDependencies: true,
       emitCJS: true,
@@ -14,11 +13,6 @@ export default defineConfig({
       },
     },
     declaration: 'compatible',
-    hooks: {
-      'rollup:options': (ctx, opts) => {
-        hooks.transformModernModuleExtensions(ctx, opts);
-      },
-    },
   },
   format: {
     semi: true,
