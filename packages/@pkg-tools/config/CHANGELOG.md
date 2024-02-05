@@ -1,5 +1,16 @@
 # @pkg-tools/config
 
+## 1.0.1
+
+### Patch Changes
+
+- 1bc1e96: Update READMEs.
+- Updated dependencies [1bc1e96]
+  - @pkg-tools/format@1.0.1
+  - @pkg-tools/build@1.0.1
+  - @pkg-tools/clean@1.0.1
+  - @pkg-tools/lint@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
