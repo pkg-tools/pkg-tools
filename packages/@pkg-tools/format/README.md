@@ -1,62 +1,57 @@
-## @pkg-tools/format
+# @pkg-tools/format
 
-A CLI for formating a package's source code.
+> A code formatting tool with typed configuration.
+
+[![@pkg-tools/format::version][format-version-src]][format-version-href]
+[![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href]
 
 This CLI is a thin abstraction on top of [prettier](https://prettier.io/).
 
-### Install
+## Install
 
 ```bash
 # w/ pnpm
-pnpm add -D @pkg-tools/format
+pnpm add -D @pkg-tools/format @pkg-tools/config
 
 # w/ yarn
-yarn add -D @pkg-tools/format
+yarn add -D @pkg-tools/format @pkg-tools/config
 
 # w/ npm
-npm install -D @pkg-tools/format
+npm install -D @pkg-tools/format @pkg-tools/config
 ```
 
-### Usage
+## Usage
 
 In your `package.json`, you can use the exported cli `format` in your format script e.g.
 
-```json
+```
 "scripts": {
   "format": "format"
-}
-```
-
-You can also check if the formatting is correct e.g.
-
-```json
-"scripts": {
   "format:check": "format -c"
 }
 ```
 
-### Configuration
+## Configure
 
-Install the @pkg-tools/config package
-
-```bash
-# w/ pnpm
-pnpm add -D @pkg-tools/config
-
-# w/ yarn
-yarn add -D @pkg-tools/config
-
-# w/ npm
-npm install -D @pkg-tools/config
-```
-
-Define a `pkg-tools.config.ts` in the root of your package and add the following.
+Define a `pkg.config.ts` in the root of your package and add the following.
 
 ```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
+import { defineConfig } from '@pkg-tools/config';
 
-export default definePkgToolsConfig({
-  format: {...},
+export default defineConfig({
+  format: {
+    semi: true,
+    tabWidth: 2,
+    singleQuote: true,
+  },
 });
-
 ```
+
+## License
+
+[MIT](./LICENSE)
+
+[format-version-src]: https://img.shields.io/npm/v/%40pkg-tools/format?style=flat-square
+[format-version-href]: https://npmjs.com/package/%40pkg-tools/format
+[format-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/format?style=flat-square
+[format-downloads-href]: https://npmjs.com/package/%40pkg-tools/format

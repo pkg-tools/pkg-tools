@@ -19,7 +19,7 @@ yarn add -D @pkg-tools/build @pkg-tools/clean @pkg-tools/config @pkg-tools/forma
 npm install -D @pkg-tools/build @pkg-tools/clean @pkg-tools/config @pkg-tools/format @pkg-tools/lint
 ```
 
-**Import:**
+**Use CLIs:**
 
 Use the CLIs provided by the pacakges in your package scripts.
 
@@ -33,7 +33,7 @@ Use the CLIs provided by the pacakges in your package scripts.
 },
 ```
 
-**Configuration:**
+**Configure:**
 
 Define a `pkg.config.ts` in the root of your package and configure your pkg-tools.
 

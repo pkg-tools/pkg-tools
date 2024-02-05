@@ -1,23 +1,27 @@
-## @pkg-tools/lint
+# @pkg-tools/lint
 
-A CLI for linting packages source code.
+> A code linting tool with typed configuration.
+
+[![@pkg-tools/lint::version][lint-version-src]][lint-version-href]
+[![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]
 
 This CLI is a thin abstraction on top of [eslint](https://eslint.org/).
 
-### Install
+## Install
 
 ```bash
 # w/ pnpm
-pnpm add -D @pkg-tools/lint
+pnpm add -D @pkg-tools/lint @pkg-tools/config
 
 # w/ yarn
-yarn add -D @pkg-tools/lint
+yarn add -D @pkg-tools/lint @pkg-tools/config
 
 # w/ npm
-npm install -D @pkg-tools/lint
+npm install -D @pkg-tools/lint @pkg-tools/config
+
 ```
 
-### Usage
+## Usage
 
 In your `package.json`, you can use the exported cli `lint` in your lint script e.g.
 
@@ -27,28 +31,27 @@ In your `package.json`, you can use the exported cli `lint` in your lint script 
 }
 ```
 
-### Configuration
+## Configure
 
-Install the @pkg-tools/config package
-
-```bash
-# w/ pnpm
-pnpm add -D @pkg-tools/config
-
-# w/ yarn
-yarn add -D @pkg-tools/config
-
-# w/ npm
-npm install -D @pkg-tools/config
-```
-
-Define a `pkg-tools.config.ts` in the root of your package and add the following.
+Define a `pkg.config.ts` in the root of your package and add the following.
 
 ```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
+import { defineConfig } from '@pkg-tools/config';
 
-export default definePkgToolsConfig({
-  lint: {...},
+export default defineConfig({
+  lint: {
+    rules: {
+      'no-unused-vars': 0,
+    },
+  },
 });
-
 ```
+
+## License
+
+[MIT](./LICENSE)
+
+[lint-version-src]: https://img.shields.io/npm/v/%40pkg-tools/lint?style=flat-square
+[lint-version-href]: https://npmjs.com/package/%40pkg-tools/lint
+[lint-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/lint?style=flat-square
+[lint-downloads-href]: https://npmjs.com/package/%40pkg-tools/lint
