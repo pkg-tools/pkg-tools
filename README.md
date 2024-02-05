@@ -1,33 +1,27 @@
 # pkg-tools
 
-> An opinionated toolchain for your TS package's build-related tasks.
+> An opinionated TS package build toolchain
 
 [![Github Actions][github-actions-src]][github-actions-href]
 
-🚧 This project is in beta. 🚧
-
 ## 🚩 Problem
 
-The toolchain necessary to build TypeScript packages is quite complicated.
-
-I'm talking about the libraries, configuration, and package scripts necessary do the following.
+The build toolchain necessary to ship TS packages is complicated i.e., the dependencies, configuration, and package scripts necessary do the following.
 
 - build
-- dev
 - lint
 - format
 - clean
 
-The complexity is a function of the growing number of target runtimes, the sheer variety of what might be in those packages, and the voltaility of the JS/TS ecosystem.
+The complexity arises from the growing number of runtimes targeted, the variety of what might be in your package, and the voltaility of the JS/TS ecosystem.
 
 ## 🎯Goal
 
-Create an opinionated toolchain for the most common TS package tasks. Each tool should do the following.
+Create an opinionated TS package build toolchain to help accomplish the most common tasks. Each tool should do the following.
 
 - Wrap the modern best-of-breed tool for the task
 - Be usable as a CLI or programmatically
 - Be configurable via a single typed configuration file (`pkg-tools.config.ts`)
-- Usable individually or via a monolithic package
 
 Check out the [examples](./examples) to see pkg-tools in action!
 
@@ -50,30 +44,15 @@ All of the tools and their CLIs are re-exported via a monolithic package called 
 
 **Install:**
 
-The monolithic package.
-
 ```sh
 # pnpm
-pnpm add -D @pkg-tools/pkg-tool
+pnpm add -D @pkg-tools/build @pkg-tools/clean @pkg-tools/config @pkg-tools/format @pkg-tools/lint
 
 # yarn
-yarn add -D @pkg-tools/pkg-tool
+yarn add -D @pkg-tools/build @pkg-tools/clean @pkg-tools/config @pkg-tools/format @pkg-tools/lint
 
 # npm
-npm install -D @pkg-tools/pkg-tool --save-dev
-```
-
-or select individual packages e.g.
-
-```sh
-# pnpm
-pnpm add -D @pkg-tools/build @pkg-tools/format @pkg-tools/config
-
-# yarn
-yarn add -D @pkg-tools/build @pkg-tools/format @pkg-tools/config
-
-# npm
-npm install -D @pkg-tools/build @pkg-tools/format @pkg-tools/config
+npm install -D @pkg-tools/build @pkg-tools/clean @pkg-tools/config @pkg-tools/format @pkg-tools/lint
 ```
 
 **Import:**
@@ -95,9 +74,9 @@ Use the CLIs provided by the pacakge(s) in your package scripts.
 Define a `pkg-tools.config.ts` in the root of your package and add the following.
 
 ```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
+import { defineConfig } from '@pkg-tools/config';
 
-export default definePkgToolsConfig({
+export default defineConfig({
   build: {...},
   clean: {...},
   format: {...},
