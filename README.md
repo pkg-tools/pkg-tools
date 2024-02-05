@@ -1,44 +1,8 @@
 # pkg-tools
 
-> An opinionated TS package build toolchain
+> An opinionated TS package build toolchain with a single typed configuration.
 
 [![Github Actions][github-actions-src]][github-actions-href]
-
-## 🚩 Problem
-
-The build toolchain necessary to ship TS packages is complicated i.e., the dependencies, configuration, and package scripts necessary do the following.
-
-- build
-- lint
-- format
-- clean
-
-The complexity arises from the growing number of runtimes targeted, the variety of what might be in your package, and the voltaility of the JS/TS ecosystem.
-
-## 🎯Goal
-
-Create an opinionated TS package build toolchain to help accomplish the most common tasks. Each tool should do the following.
-
-- Wrap the modern best-of-breed tool for the task
-- Be usable as a CLI or programmatically
-- Be configurable via a single typed configuration file (`pkg-tools.config.ts`)
-
-Check out the [examples](./examples) to see pkg-tools in action!
-
-## 🛠️ Tools
-
-Below is the family of tools the comprise pkg-tools.
-
-| Package                                               |  CLI(s)  |                                                                   Library                                                                    | Status |                                                                  Version | Downloads                                                                      |
-| ----------------------------------------------------- | :------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :----: | -----------------------------------------------------------------------: | ------------------------------------------------------------------------------ |
-| **[@pkg-tools/build](./packages/@pkg-tools/build)**   | `build`  |                                                  [unbuild](https://github.com/unjs/unbuild)                                                  |   🟢   |    [![@pkg-tools/build::version][build-version-src]][build-version-href] | [![@pkg-tools/build::downloads][build-downloads-src]][build-downloads-href]    |
-| **[@pkg-tools/clean](./packages/@pkg-tools/clean)**   | `clean`  |                                                [shelljs](https://github.com/shelljs/shelljs)                                                 |   🟢   |    [![@pkg-tools/clean::version][clean-version-src]][clean-version-href] | [![@pkg-tools/clean::downloads][clean-downloads-src]][clean-downloads-href]    |
-| **[@pkg-tools/format](./packages/@pkg-tools/format)** | `format` |                                                       [prettier](https://prettier.io/)                                                       |   🟢   | [![@pkg-tools/format::version][format-version-src]][format-version-href] | [![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href] |
-| **[@pkg-tools/lint](./packages/@pkg-tools/lint)**     |  `lint`  |                                                        [eslint](https://eslint.org/)                                                         |   🟢   |       [![@pkg-tools/lint::version][lint-version-src]][lint-version-href] | [![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]       |
-| **[@pkg-tools/sync](./packages/@pkg-tools/sync)**     |  `sync`  |                                                [oktokit](https://github.com/octokit/rest.js)                                                 |   🟡   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
-| **[@pkg-tools/sort](./packages/@pkg-tools/sort)**     |  `sort`  | [oranize-imports](https://www.npmjs.com/package/organize-imports-cli) / [sort-pacakge-json](https://www.npmjs.com/package/sort-package-json) |   🔴   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
-
-All of the tools and their CLIs are re-exported via a monolithic package called **[@pkg-tools/pkg-tools](./packages/@pkg-tools/pkg-tools)**.
 
 ## Usage
 
@@ -63,7 +27,6 @@ Use the CLIs provided by the pacakge(s) in your package scripts.
 "scripts": {
   "build": "build",
   "clean": "clean",
-  "dev": "build -s",
   "format": "format",
   "lint": "lint"
 },
@@ -71,19 +34,77 @@ Use the CLIs provided by the pacakge(s) in your package scripts.
 
 **Configuration:**
 
-Define a `pkg-tools.config.ts` in the root of your package and add the following.
+Define a `pkg.config.ts` in the root of your package and configure your pkg-tools.
 
 ```ts
-import { defineConfig } from '@pkg-tools/config';
+import { defineConfig } from "@pkg-tools/config";
 
 export default defineConfig({
-  build: {...},
-  clean: {...},
-  format: {...},
-  lint: {...},
+  build: {
+    entries: ["src/index"],
+    sourcemap: true,
+    extensions: "compatible",
+    rollup: {
+      inlineDependencies: true,
+      emitCJS: true,
+      esbuild: {
+        target: ["node16"],
+        minify: true,
+      },
+    },
+    declaration: "compatible",
+  },
+  clean: {
+    directory: "./dist",
+  },
+  format: {
+    semi: true,
+    tabWidth: 2,
+    singleQuote: true,
+  },
+  lint: {
+    rules: {
+      "no-unused-vars": 0,
+    },
+  },
 });
-
 ```
+
+## 🚩 Problem
+
+The build toolchain necessary to ship TS packages is complicated i.e., the dependencies, configuration, and package scripts necessary do the following.
+
+- build
+- lint
+- format
+- clean
+
+The complexity arises from the growing number of runtimes targeted, the variety of what might be in your package, and the voltaility of the JS/TS ecosystem.
+
+## 🎯Goal
+
+Create an opinionated TS package build toolchain to help accomplish the most common tasks. Each tool should do the following.
+
+- Wrap the modern best-of-breed tool for the task
+- Be usable as a CLI or programmatically
+- Be configurable via a single typed configuration file (`pkg.config.ts`)
+
+Check out the [examples](./examples) to see pkg-tools in action!
+
+## 🛠️ Tools
+
+Below is the family of tools the comprise pkg-tools.
+
+| Package                                               |  CLI(s)  |                                                                   Library                                                                    | Status |                                                                  Version | Downloads                                                                      |
+| ----------------------------------------------------- | :------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :----: | -----------------------------------------------------------------------: | ------------------------------------------------------------------------------ |
+| **[@pkg-tools/build](./packages/@pkg-tools/build)**   | `build`  |                                                  [unbuild](https://github.com/unjs/unbuild)                                                  |   🟢   |    [![@pkg-tools/build::version][build-version-src]][build-version-href] | [![@pkg-tools/build::downloads][build-downloads-src]][build-downloads-href]    |
+| **[@pkg-tools/clean](./packages/@pkg-tools/clean)**   | `clean`  |                                                [shelljs](https://github.com/shelljs/shelljs)                                                 |   🟢   |    [![@pkg-tools/clean::version][clean-version-src]][clean-version-href] | [![@pkg-tools/clean::downloads][clean-downloads-src]][clean-downloads-href]    |
+| **[@pkg-tools/format](./packages/@pkg-tools/format)** | `format` |                                                       [prettier](https://prettier.io/)                                                       |   🟢   | [![@pkg-tools/format::version][format-version-src]][format-version-href] | [![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href] |
+| **[@pkg-tools/lint](./packages/@pkg-tools/lint)**     |  `lint`  |                                                        [eslint](https://eslint.org/)                                                         |   🟢   |       [![@pkg-tools/lint::version][lint-version-src]][lint-version-href] | [![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]       |
+| **[@pkg-tools/sync](./packages/@pkg-tools/sync)**     |  `sync`  |                                                [oktokit](https://github.com/octokit/rest.js)                                                 |   🟡   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
+| **[@pkg-tools/sort](./packages/@pkg-tools/sort)**     |  `sort`  | [oranize-imports](https://www.npmjs.com/package/organize-imports-cli) / [sort-pacakge-json](https://www.npmjs.com/package/sort-package-json) |   🔴   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
+
+All of the tools and their CLIs are re-exported via a monolithic package called **[@pkg-tools/pkg-tools](./packages/@pkg-tools/pkg-tools)**.
 
 ## Development
 
