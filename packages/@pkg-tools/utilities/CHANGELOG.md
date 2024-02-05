@@ -1,5 +1,11 @@
 # @pkg-tools/utilities
 
+## 1.0.1
+
+### Patch Changes
+
+- 1bc1e96: Update READMEs.
+
 ## 1.0.0
 
 ### Major Changes

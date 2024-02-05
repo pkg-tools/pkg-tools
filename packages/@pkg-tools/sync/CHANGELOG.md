@@ -1,5 +1,11 @@
 # @pkg-tools/sync
 
+## 0.2.1
+
+### Patch Changes
+
+- 1bc1e96: Update READMEs.
+
 ## 0.2.0
 
 ### Minor Changes

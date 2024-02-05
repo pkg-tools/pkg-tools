@@ -1,5 +1,13 @@
 # @pkg-tools/clean
 
+## 1.0.1
+
+### Patch Changes
+
+- 1bc1e96: Update READMEs.
+- Updated dependencies [1bc1e96]
+  - @pkg-tools/utilities@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
