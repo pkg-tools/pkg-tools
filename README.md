@@ -21,12 +21,13 @@ npm install -D @pkg-tools/build @pkg-tools/clean @pkg-tools/config @pkg-tools/fo
 
 **Import:**
 
-Use the CLIs provided by the pacakge(s) in your package scripts.
+Use the CLIs provided by the pacakges in your package scripts.
 
 ```json
 "scripts": {
   "build": "build",
   "clean": "clean",
+  "dev": "build -w",
   "format": "format",
   "lint": "lint"
 },
@@ -70,18 +71,30 @@ export default defineConfig({
 });
 ```
 
-## 🚩 Problem
+## 👀 Examples
+
+Check out the [examples](./examples) to see pkg-tools usage.
+
+- [node-module-ts](./examples/node-module-ts)
+- [node-module-cli-ts](./examples/node-module-cli-ts)
+- [react-app-vite-ts](./examples/react-app-vite-ts)
+- [react-component-ts](./examples/react-component-ts)
+
+## 🔬 Background
+
+### 🚩 Problem
 
 The build toolchain necessary to ship TS packages is complicated i.e., the dependencies, configuration, and package scripts necessary do the following.
 
 - build
+- dev (build w/ watch)
 - lint
 - format
 - clean
 
 The complexity arises from the growing number of runtimes targeted, the variety of what might be in your package, and the voltaility of the JS/TS ecosystem.
 
-## 🎯Goal
+### 🎯Goal
 
 Create an opinionated TS package build toolchain to help accomplish the most common tasks. Each tool should do the following.
 
@@ -89,9 +102,7 @@ Create an opinionated TS package build toolchain to help accomplish the most com
 - Be usable as a CLI or programmatically
 - Be configurable via a single typed configuration file (`pkg.config.ts`)
 
-Check out the [examples](./examples) to see pkg-tools in action!
-
-## 🛠️ Tools
+### 🛠️ Tools
 
 Below is the family of tools the comprise pkg-tools.
 
@@ -104,8 +115,6 @@ Below is the family of tools the comprise pkg-tools.
 | **[@pkg-tools/sync](./packages/@pkg-tools/sync)**     |  `sync`  |                                                [oktokit](https://github.com/octokit/rest.js)                                                 |   🟡   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
 | **[@pkg-tools/sort](./packages/@pkg-tools/sort)**     |  `sort`  | [oranize-imports](https://www.npmjs.com/package/organize-imports-cli) / [sort-pacakge-json](https://www.npmjs.com/package/sort-package-json) |   🔴   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
 
-All of the tools and their CLIs are re-exported via a monolithic package called **[@pkg-tools/pkg-tools](./packages/@pkg-tools/pkg-tools)**.
-
 ## Development
 
 - Clone this repository
@@ -117,10 +126,6 @@ All of the tools and their CLIs are re-exported via a monolithic package called 
 
 [MIT](./LICENSE)
 
-[pkg-tools-version-src]: https://img.shields.io/npm/v/%40pkg-tools/pkg-tools?style=flat-square
-[pkg-tools-version-href]: https://npmjs.com/package/%40pkg-tools/pkg-tools
-[pkg-tools-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/pkg-tools?style=flat-square
-[pkg-tools-downloads-href]: https://npmjs.com/package/%40pkg-tools/pkg-tools
 [build-version-src]: https://img.shields.io/npm/v/%40pkg-tools/build?style=flat-square
 [build-version-href]: https://npmjs.com/package/%40pkg-tools/build
 [build-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/build?style=flat-square
