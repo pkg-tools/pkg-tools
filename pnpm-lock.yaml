@@ -429,55 +429,6 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.3.3)
 
-  packages/@pkg-tools/pkg-tools:
-    dependencies:
-      '@pkg-tools/build':
-        specifier: workspace:*
-        version: link:../build
-      '@pkg-tools/clean':
-        specifier: workspace:*
-        version: link:../clean
-      '@pkg-tools/config':
-        specifier: workspace:*
-        version: link:../config
-      '@pkg-tools/format':
-        specifier: workspace:*
-        version: link:../format
-      '@pkg-tools/lint':
-        specifier: workspace:*
-        version: link:../lint
-    devDependencies:
-      '@types/shelljs':
-        specifier: 0.8.15
-        version: 0.8.15
-      '@typescript-eslint/eslint-plugin':
-        specifier: 6.16.0
-        version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/parser':
-        specifier: 6.16.0
-        version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
-      eslint:
-        specifier: 8.56.0
-        version: 8.56.0
-      prettier:
-        specifier: 3.1.1
-        version: 3.1.1
-      publint:
-        specifier: ^0.2.7
-        version: 0.2.7
-      shx:
-        specifier: 0.3.4
-        version: 0.3.4
-      sort-package-json:
-        specifier: ^2.6.0
-        version: 2.6.0
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
-      unbuild:
-        specifier: 2.0.0
-        version: 2.0.0(typescript@5.3.3)
-
   packages/@pkg-tools/sync:
     dependencies:
       '@dopt/resolve-workspace-dependencies':
