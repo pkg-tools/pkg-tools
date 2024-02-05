@@ -1,5 +1,19 @@
 # @pkg-tools/config
 
+## 1.0.0
+
+### Major Changes
+
+- 251b392: Release version 1.0 of pkg-tools.
+
+### Patch Changes
+
+- Updated dependencies [251b392]
+  - @pkg-tools/build@1.0.0
+  - @pkg-tools/clean@1.0.0
+  - @pkg-tools/format@1.0.0
+  - @pkg-tools/lint@1.0.0
+
 ## 0.1.0
 
 ### Minor Changes
