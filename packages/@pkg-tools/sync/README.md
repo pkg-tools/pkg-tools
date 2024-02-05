@@ -1,23 +1,29 @@
-## @pkg-tools/sync
+# @pkg-tools/sync
 
 🚧 This package is in beta. 🚧
 
-A CLI for mirroring code from a package in a monorepo to another repository
+> A code mirroring tool with typed configuration.
 
-### Install
+[![@pkg-tools/sync::version][sync-version-src]][sync-version-href]
+[![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]
+
+A CLI for mirroring code from a package in a monorepo to another repository.
+
+## Install
 
 ```bash
 # w/ pnpm
-pnpm add -D @pkg-tools/sync
+pnpm add -D @pkg-tools/sync @pkg-tools/config
 
 # w/ yarn
-yarn add -D @pkg-tools/sync
+yarn add -D @pkg-tools/sync @pkg-tools/config
 
 # w/ npm
-npm install -D @pkg-tools/sync
+npm install -D @pkg-tools/sync @pkg-tools/config
+
 ```
 
-### Usage
+## Usage
 
 In your `package.json`, you can use the exported cli `sync` in your sync script e.g.
 
@@ -27,28 +33,25 @@ In your `package.json`, you can use the exported cli `sync` in your sync script 
 }
 ```
 
-### Configuration
+## Configure
 
-Install the @pkg-tools/config package
-
-```bash
-# w/ pnpm
-pnpm add -D @pkg-tools/config
-
-# w/ yarn
-yarn add -D @pkg-tools/config
-
-# w/ npm
-npm install -D @pkg-tools/config
-```
-
-Define a `pkg-tools.config.ts` in the root of your package and add the following.
+Define a `pkg.config.ts` in the root of your package and add the following.
 
 ```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
+import { defineConfig } from "@pkg-tools/config";
 
-export default definePkgToolsConfig({
-  sync: {...},
+export default defineConfig({
+  sync: {
+    //TBD
+  },
 });
-
 ```
+
+## License
+
+[MIT](./LICENSE)
+
+[sync-version-src]: https://img.shields.io/npm/v/%40pkg-tools/sync?style=flat-square
+[sync-version-href]: https://npmjs.com/package/%40pkg-tools/sync
+[sync-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/sync?style=flat-square
+[sync-downloads-href]: https://npmjs.com/package/%40pkg-tools/sync

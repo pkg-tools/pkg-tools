@@ -1,65 +1,32 @@
-## @pkg-tools/clean
+# @pkg-tools/utilities
 
-A CLI for cleaning packages build artifacts.
+> An internal package housing utilites used by @pkg-tools/\*
 
-This CLI is a thin abstraction on top of [ShellJs](https://www.npmjs.com/package/shelljs). It centralizes our usage of ShellJS's `rm` command.
+[![@pkg-tools/utilities::version][utilities-version-src]][utilities-version-href]
+[![@pkg-tools/utilities::downloads][utilities-downloads-src]][utilities-downloads-href]
 
-### Install
-
-```bash
-# w/ pnpm
-pnpm add -D @pkg-tools/clean
-
-# w/ yarn
-yarn add -D @pkg-tools/clean
-
-# w/ npm
-npm install -D @pkg-tools/clean
-```
-
-### Usage
-
-In your `package.json`, you can use the exported cli `clean` in your clean script e.g.
-
-```
-"scripts": {
-  "clean": "clean"
-}
-```
-
-By default `clean` removes the `./dist` directory. If you need to clean a different directory provide a relative path to it as an argument e.g.,
-
-```
-"scripts": {
-  "clean": "clean ./lib"
-}
-```
-
-Alternatively, you can configre clean using the a `pkg-tools.config.ts` configuration. See the next section.
-
-### Configuration
-
-Install the @pkg-tools/config package
+## Install
 
 ```bash
 # w/ pnpm
-pnpm add -D @pkg-tools/config
+pnpm add -D @pkg-tools/utilities
 
 # w/ yarn
-yarn add -D @pkg-tools/config
+yarn add -D @pkg-tools/utilities
 
 # w/ npm
-npm install -D @pkg-tools/config
+npm install -D @pkg-tools/utilities
 ```
 
-Define a `pkg-tools.config.ts` in the root of your package and add the following.
+## Usage
 
-```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
+Meant for internal usage only.
 
-export default definePkgToolsConfig({
-  clean: {
-    directory: './lib',
-  },
-});
-```
+## License
+
+[MIT](./LICENSE)
+
+[utilities-version-src]: https://img.shields.io/npm/v/%40pkg-tools/utilities?style=flat-square
+[utilities-version-href]: https://npmjs.com/package/%40pkg-tools/utilities
+[utilities-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/utilities?style=flat-square
+[utilities-downloads-href]: https://npmjs.com/package/%40pkg-tools/utilities``

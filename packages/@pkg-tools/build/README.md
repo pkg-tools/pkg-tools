@@ -1,81 +1,66 @@
-## @pkg-tools/build
+# @pkg-tools/build
 
-A CLI for building packages.
+> A build tool with typed configuration.
 
-This CLI is a thin abstraction on top of [unbuild](https://github.com/unjs/unbuild). It centralizes our build configuration, which helps us consistently build opensource packages that support both module systems (CJS and ESM).
+[![@pkg-tools/build::version][build-version-src]][build-version-href] [![@pkg-tools/build::downloads][build-downloads-src]][build-downloads-href]
 
-### Install
+This tool is a thin abstraction on top of [unbuild](https://github.com/unjs/unbuild). It centralizes your build configuration, which helps us consistently build opensource packages that support both module systems (CJS and ESM).
+
+## Install
 
 ```bash
 # w/ pnpm
-pnpm add -D @pkg-tools/build
+pnpm add -D @pkg-tools/build @pkg-tools/config
 
 # w/ yarn
-yarn add -D @pkg-tools/build
+yarn add -D @pkg-tools/build @pkg-tools/config
 
 # w/ npm
-npm install -D @pkg-tools/build
+npm install -D @pkg-tools/build @pkg-tools/config
 ```
 
-### Usage
+## Usage
 
 In your `package.json`, you can use the exported cli `build` in your build script e.g.
 
 ```
 "scripts": {
   "build": "build"
+  "dev": "build -w"
+  "stub": "build -s"
 }
 ```
 
-The @pkg-tools/build package ships with some common configurations. Read more on [config](#configuration) below. These configurations change the build output and will typically require update to your package.json exports.
+## Configure
+
+Define a `pkg.config.ts` in the root of your package and add the following.
 
 ```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
-import { config } from "@pkg-tools/build";
+import { defineConfig } from "@pkg-tools/config";
 
-// Browser packages
-export default definePkgToolsConfig({
-  build: config.browser({...})
-});
-
-// React packages
-export default definePkgToolsConfig({
-  build: config.react({...})
-});
-
-// Node packages
-export default definePkgToolsConfig({
-  build: config.node({...})
-});
-
-// Isomorpohic packages
-export default definePkgToolsConfig({
-  build: config.isomorphic({...})
+export default defineConfig({
+  build: {
+    entries: ["src/index"],
+    sourcemap: true,
+    extensions: "compatible",
+    rollup: {
+      inlineDependencies: true,
+      emitCJS: true,
+      esbuild: {
+        target: ["node16"],
+        minify: true,
+      },
+    },
+    declaration: "compatible",
+  },
 });
 ```
 
-### Configuration
+## License
 
-Install the @pkg-tools/config package
+[MIT](./LICENSE)
 
-```bash
-# w/ pnpm
-pnpm add -D @pkg-tools/config
-
-# w/ yarn
-yarn add -D @pkg-tools/config
-
-# w/ npm
-npm install -D @pkg-tools/config
-```
-
-Define a `pkg-tools.config.ts` in the root of your package and add the following.
-
-```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
-
-export default definePkgToolsConfig({
-  build: {...},
-});
-
-```
+[build-version-src]: https://img.shields.io/npm/v/%40pkg-tools/build?style=flat-square
+[build-version-href]: https://npmjs.com/package/%40pkg-tools/build
+[build-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/build?style=flat-square
+[build-downloads-href]: https://npmjs.com/package/%40pkg-tools/build

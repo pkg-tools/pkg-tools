@@ -1,23 +1,26 @@
-## @pkg-tools/clean
+# @pkg-tools/clean
 
-A CLI for cleaning packages build artifacts.
+> A build artifact cleaning tool with typed configuration.
+
+[![@pkg-tools/clean::version][clean-version-src]][clean-version-href]
+[![@pkg-tools/clean::downloads][clean-downloads-src]][clean-downloads-href]
 
 This CLI is a thin abstraction on top of [ShellJs](https://www.npmjs.com/package/shelljs). It centralizes our usage of ShellJS's `rm` command.
 
-### Install
+## Install
 
 ```bash
 # w/ pnpm
-pnpm add -D @pkg-tools/clean
+pnpm add -D @pkg-tools/clean @pkg-tools/config
 
 # w/ yarn
-yarn add -D @pkg-tools/clean
+yarn add -D @pkg-tools/clean @pkg-tools/config
 
 # w/ npm
-npm install -D @pkg-tools/clean
+npm install -D @pkg-tools/clean @pkg-tools/config
 ```
 
-### Usage
+## Usage
 
 In your `package.json`, you can use the exported cli `clean` in your clean script e.g.
 
@@ -27,39 +30,25 @@ In your `package.json`, you can use the exported cli `clean` in your clean scrip
 }
 ```
 
-By default `clean` removes the `./dist` directory. If you need to clean a different directory provide a relative path to it as an argument e.g.,
+## Configure
 
-```
-"scripts": {
-  "clean": "clean ./lib"
-}
-```
-
-Alternatively, you can configre clean using the a `pkg-tools.config.ts` configuration. See the next section.
-
-### Configuration
-
-Install the @pkg-tools/config package
-
-```bash
-# w/ pnpm
-pnpm add -D @pkg-tools/config
-
-# w/ yarn
-yarn add -D @pkg-tools/config
-
-# w/ npm
-npm install -D @pkg-tools/config
-```
-
-Define a `pkg-tools.config.ts` in the root of your package and add the following.
+Define a `pkg.config.ts` in the root of your package and add the following.
 
 ```ts
-import { definePkgToolsConfig } from '@pkg-tools/config';
+import { defineConfig } from '@pkg-tools/config';
 
-export default definePkgToolsConfig({
+export default defineConfig({
   clean: {
-    directory: './lib',
+    directory: './dist',
   },
 });
 ```
+
+## License
+
+[MIT](./LICENSE)
+
+[clean-version-src]: https://img.shields.io/npm/v/%40pkg-tools/clean?style=flat-square
+[clean-version-href]: https://npmjs.com/package/%40pkg-tools/clean
+[clean-downloads-src]: https://img.shields.io/npm/dm/%40pkg-tools/clean?style=flat-square
+[clean-downloads-href]: https://npmjs.com/package/%40pkg-tools/clean
