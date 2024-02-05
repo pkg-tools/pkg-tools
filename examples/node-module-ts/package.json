@@ -25,7 +25,7 @@
     "👇required package scripts": "",
     "build": "build",
     "clean": "clean",
-    "dev": "build -s",
+    "dev": "build -w",
     "format": "format",
     "formatcheck": "format -c",
     "lint": "lint",

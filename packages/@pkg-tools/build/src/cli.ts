@@ -12,6 +12,11 @@ import { name, version, description } from "../package.json";
 import { build } from "unbuild";
 import { getConfig } from "./config";
 
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 const main = defineCommand({
   meta: {
     name,
@@ -40,7 +45,7 @@ const main = defineCommand({
         nodemon({
           watch: [path.relative(process.cwd(), path.resolve(rootDir, "./src"))],
           ext: "*",
-          exec: "pnpm run build",
+          exec: `node ${__dirname}/cli.mjs`,
         }).on("quit", function () {
           resolve();
           process.exit();
