@@ -4,7 +4,7 @@ import jiti from 'jiti';
 export function resolvePkgToolsConfig() {
   const rootDir = path.resolve(process.cwd(), '.');
 
-  const pkgToolsConfig = tryRequire('./pkg-tools.config', rootDir) || {};
+  const pkgToolsConfig = tryRequire('./pkg.config', rootDir) || {};
 
   return pkgToolsConfig;
 }

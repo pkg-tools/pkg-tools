@@ -1,4 +1,5 @@
 import { defineConfig } from '@pkg-tools/config';
+
 export default defineConfig({
   build: {
     entries: ['src/index'],
@@ -18,5 +19,10 @@ export default defineConfig({
     semi: true,
     tabWidth: 2,
     singleQuote: true,
+  },
+  lint: {
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
   },
 });

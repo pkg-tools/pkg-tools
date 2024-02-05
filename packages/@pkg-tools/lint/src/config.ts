@@ -17,5 +17,5 @@ export const defaults: Config = {
 };
 
 export function getConfig(config: Partial<Config>): Config {
-  return defu(config, resolvePkgToolsConfig()['clean'], defaults);
+  return defu(config, resolvePkgToolsConfig()['lint'], defaults);
 }
