@@ -1,6 +1,6 @@
 # pkg-tools
 
-> An opinionated TS package build toolchain with a single typed configuration.
+> An opinionated TS package build toolchain w/ typed configuration.
 
 [![Github Actions][github-actions-src]][github-actions-href]
 
