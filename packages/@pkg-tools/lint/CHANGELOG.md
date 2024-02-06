@@ -1,5 +1,11 @@
 # @pkg-tools/lint
 
+## 1.0.2
+
+### Patch Changes
+
+- a4bcf4f: Add @types/eslint to deps (instead of devDeps).
+
 ## 1.0.1
 
 ### Patch Changes
