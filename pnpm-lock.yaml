@@ -382,6 +382,9 @@ importers:
       '@pkg-tools/utilities':
         specifier: workspace:*
         version: link:../utilities
+      '@types/eslint':
+        specifier: 8.56.0
+        version: 8.56.0
       citty:
         specifier: 0.1.5
         version: 0.1.5
@@ -401,9 +404,6 @@ importers:
         specifier: 14.0.0
         version: 14.0.0
     devDependencies:
-      '@types/eslint':
-        specifier: 8.56.0
-        version: 8.56.0
       '@typescript-eslint/eslint-plugin':
         specifier: 6.16.0
         version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -2661,7 +2661,7 @@ packages:
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
-    dev: true
+    dev: false
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2675,7 +2675,6 @@ packages:
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
-    dev: true
 
   /@types/micromatch@4.0.6:
     resolution: {integrity: sha512-2eulCHWqjEpk9/vyic4tBhI8a9qQEl6DaK2n/sF7TweX9YESlypgKyhXMDGt4DAOy/jhLPvVrZc8pTDAMsplJA==}
