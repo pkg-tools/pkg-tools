@@ -21,7 +21,7 @@ npm install -D @pkg-tools/build @pkg-tools/clean @pkg-tools/config @pkg-tools/fo
 
 **Use CLIs:**
 
-Use the CLIs provided by the pacakges in your package scripts.
+Use the CLIs provided by the packages in your package scripts.
 
 ```json
 "scripts": {
@@ -92,7 +92,7 @@ The build toolchain necessary to ship TS packages is complicated i.e., the depen
 - format
 - clean
 
-The complexity arises from the growing number of runtimes targeted, the variety of what might be in your package, and the voltaility of the JS/TS ecosystem.
+The complexity arises from the growing number of runtimes targeted, the variety of what might be in your package, and the volatility of the JS/TS ecosystem.
 
 ### 🎯Goal
 
@@ -113,7 +113,7 @@ Below is the family of tools the comprise pkg-tools.
 | **[@pkg-tools/format](./packages/@pkg-tools/format)** | `format` |                                                       [prettier](https://prettier.io/)                                                       |   🟢   | [![@pkg-tools/format::version][format-version-src]][format-version-href] | [![@pkg-tools/format::downloads][format-downloads-src]][format-downloads-href] |
 | **[@pkg-tools/lint](./packages/@pkg-tools/lint)**     |  `lint`  |                                                        [eslint](https://eslint.org/)                                                         |   🟢   |       [![@pkg-tools/lint::version][lint-version-src]][lint-version-href] | [![@pkg-tools/lint::downloads][lint-downloads-src]][lint-downloads-href]       |
 | **[@pkg-tools/sync](./packages/@pkg-tools/sync)**     |  `sync`  |                                                [oktokit](https://github.com/octokit/rest.js)                                                 |   🟡   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
-| **[@pkg-tools/sort](./packages/@pkg-tools/sort)**     |  `sort`  | [oranize-imports](https://www.npmjs.com/package/organize-imports-cli) / [sort-pacakge-json](https://www.npmjs.com/package/sort-package-json) |   🔴   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
+| **[@pkg-tools/sort](./packages/@pkg-tools/sort)**     |  `sort`  | [oranize-imports](https://www.npmjs.com/package/organize-imports-cli) / [sort-package-json](https://www.npmjs.com/package/sort-package-json) |   🔴   |       [![@pkg-tools/sync::version][sync-version-src]][sync-version-href] | [![@pkg-tools/sync::downloads][sync-downloads-src]][sync-downloads-href]       |
 
 ## Development
 
