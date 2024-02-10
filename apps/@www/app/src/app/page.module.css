@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
@@ -24,7 +24,30 @@
   gap: 5px;
 }
 
+.steps {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  width: 100%;
+  gap: 10px;
+  padding: 18px 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  .stepTitle {
+    padding: 10px 0;
+  }
+  .code {
+    flex: 1;
+  }
+}
+
 .footer {
+  padding-top: 4em;
   display: flex;
 }
 .byDopt {
