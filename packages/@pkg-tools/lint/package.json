@@ -58,7 +58,8 @@
     "test": "echo \"@pkg-tools/lint does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/lint\""
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/lint\"",
+    "postinstall": "node ./postinstall.mjs"
   },
   "dependencies": {
     "@pkg-tools/utilities": "workspace:*",
