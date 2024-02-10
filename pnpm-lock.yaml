@@ -258,6 +258,37 @@ importers:
         specifier: 5.1.6
         version: 5.1.6
 
+  create-pkg/templates/test-create-pkg:
+    dependencies:
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+    devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@pkg-tools/build':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/lint
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
   examples/node-module-cli-ts:
     dependencies:
       citty:
@@ -381,6 +412,37 @@ importers:
       typescript:
         specifier: 5.1.6
         version: 5.1.6
+
+  examples/test-create-pkg:
+    dependencies:
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+    devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@pkg-tools/build':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: workspace:*
+        version: link:../../packages/@pkg-tools/lint
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
 
   packages/@pkg-tools/build:
     dependencies:

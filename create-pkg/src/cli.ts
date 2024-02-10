@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-import path from 'node:path';
 
 import { defineCommand, runMain } from 'citty';
 
@@ -29,7 +28,8 @@ const main = defineCommand({
   async run({ args }) {
     try {
       await scaffold({
-        ...args,
+        template: args.template,
+        targetPath: args.path,
       });
     } catch (error) {
       consola.error(`Error: ${error}`);

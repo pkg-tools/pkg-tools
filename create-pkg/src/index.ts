@@ -3,7 +3,10 @@ import consola from 'consola';
 import fs from 'node:fs';
 import path from 'node:path';
 import childProcess from 'node:child_process';
+import url from 'node:url';
 import { packageManagerFromUserAgent } from './utils';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 interface ScaffoldArguments {
   targetPath?: string;
@@ -24,7 +27,7 @@ export async function scaffold({
     consola.error(`"${template}" template does not exist`);
   }
 
-  consola.info(
+  consola.log(
     `\n🔨 Creating a project based on "${template}" template example project in ${targetPath}...`
   );
 
@@ -41,7 +44,7 @@ export async function scaffold({
 
   consola.log('\n🚧 Installing dependencies...');
 
-  childProcess.execSync(`${packageManagerFromUserAgent()} install`, {
+  childProcess.execSync(`${packageManagerFromUserAgent().name} install`, {
     cwd: targetPath,
     stdio: 'inherit',
   });
