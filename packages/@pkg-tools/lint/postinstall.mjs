@@ -18,10 +18,10 @@ module.exports = {
     `Looks like you already have a .eslintrc.cjs. Not overwriting it.`
   );
   consola.info(
-    `For @pkg-tools/lint to work you'll need to create this file manually`
+    `For @pkg-tools/lint to work you'll need to create this file manually.`
   );
-  consola.info('It should like like this');
-  console.log(`const { getConfig } = require("@pkg-tools/lint/config");
+  consola.info('It should like like this:');
+  consola.log(`const { getConfig } = require("@pkg-tools/lint/config");
 module.exports = {
   ...getConfig(),
 };`);

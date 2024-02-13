@@ -15,13 +15,13 @@ module.exports = {
   );
 } else {
   consola.info(
-    `Looks like you already have a .eslintrc.cjs. Not overwriting it.`
+    `Looks like you already have a .prettierrc.cjs. Not overwriting it.`
   );
   consola.info(
-    `For @pkg-tools/lint to work you'll need to create this file manually`
+    `For @pkg-tools/format to work you'll need to create this file manually.`
   );
-  consola.info('It should like like this');
-  console.log(`const { getConfig } = require("@pkg-tools/format/config");
+  consola.info('It should like like this:');
+  consola.log(`const { getConfig } = require("@pkg-tools/format/config");
 module.exports = {
   ...getConfig(),
 };
