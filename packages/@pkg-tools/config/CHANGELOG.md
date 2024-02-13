@@ -1,5 +1,13 @@
 # @pkg-tools/config
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies [e41e424]
+  - @pkg-tools/format@1.0.2
+  - @pkg-tools/lint@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @pkg-tools/format
 
+## 1.0.2
+
+### Patch Changes
+
+- e41e424: The format and lint tools create the necessary library-specific config on postinstall.
+
 ## 1.0.1
 
 ### Patch Changes
