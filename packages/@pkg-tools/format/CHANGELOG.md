@@ -1,5 +1,11 @@
 # @pkg-tools/format
 
+## 1.0.3
+
+### Patch Changes
+
+- f906fab: Include the postinstall script in the published files
+
 ## 1.0.2
 
 ### Patch Changes
