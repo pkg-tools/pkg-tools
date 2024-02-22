@@ -43,6 +43,7 @@
   "types": "./dist/index.d.mts",
   "bin": "./cli.js",
   "files": [
+    "postinstall.mjs",
     "cli.js",
     "dist"
   ],
