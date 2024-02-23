@@ -1,5 +1,17 @@
 # @pkg-tools/lint
 
+## 1.0.4
+
+### Patch Changes
+
+- f906fab: Include the postinstall script in the published files
+
+## 1.0.3
+
+### Patch Changes
+
+- e41e424: The format and lint tools create the necessary library-specific config on postinstall.
+
 ## 1.0.2
 
 ### Patch Changes
