@@ -43,7 +43,6 @@
   "types": "./dist/index.d.mts",
   "bin": "./cli.js",
   "files": [
-    "postinstall.mjs",
     "cli.js",
     "dist"
   ],
@@ -59,8 +58,7 @@
     "test": "echo \"@pkg-tools/lint does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/lint\"",
-    "postinstall": "node ./postinstall.mjs"
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/lint\""
   },
   "dependencies": {
     "@pkg-tools/utilities": "workspace:*",
