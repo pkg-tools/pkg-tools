@@ -1,5 +1,11 @@
 # @pkg-tools/lint
 
+## 1.0.5
+
+### Patch Changes
+
+- 977724e: Remove the postinstall scripts, which don't always work as expected. Opt for documentation instead.
+
 ## 1.0.4
 
 ### Patch Changes
