@@ -47,6 +47,15 @@ export default defineConfig({
 });
 ```
 
+Since @pkg-tools/format leverages [prettier](https://prettier.io/), you'll still need to create a prettier configuration file for @pkg-tools/format to work in your editor.
+
+To do so create a file named `.prettierrc.cjs` with the following contents in the root of your package.
+
+```js
+const { getConfig } = require('@pkg-tools/format/config');
+module.exports = getConfig();
+```
+
 ## License
 
 [MIT](./LICENSE)
