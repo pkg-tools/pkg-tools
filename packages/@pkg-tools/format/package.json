@@ -1,6 +1,6 @@
 {
   "name": "@pkg-tools/format",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "A utility/tool for formating packages",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
@@ -43,7 +43,6 @@
   "types": "./dist/index.d.mts",
   "bin": "./cli.js",
   "files": [
-    "postinstall.mjs",
     "cli.js",
     "dist"
   ],
@@ -59,8 +58,7 @@
     "test": "echo \"@pkg-tools/format does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/format\"",
-    "postinstall": "node ./postinstall.mjs"
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/format\""
   },
   "dependencies": {
     "@pkg-tools/utilities": "workspace:*",
