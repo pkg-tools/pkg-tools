@@ -134,6 +134,37 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.3.3)
 
+  create-pkg/templates/node:
+    dependencies:
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+    devDependencies:
+      '@dopt/config':
+        specifier: 1.1.0
+        version: 1.1.0
+      '@pkg-tools/build':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/lint
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
   create-pkg/templates/node-module-cli-ts:
     dependencies:
       citty:
@@ -195,6 +226,34 @@ importers:
       typescript:
         specifier: 5.3.3
         version: 5.3.3
+
+  create-pkg/templates/react:
+    dependencies:
+      react:
+        specifier: '>=17.0.2'
+        version: 18.2.0
+    devDependencies:
+      '@pkg-tools/build':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: workspace:*
+        version: link:../../../packages/@pkg-tools/lint
+      '@types/react':
+        specifier: 18.2.12
+        version: 18.2.12
+      typescript:
+        specifier: 5.1.6
+        version: 5.1.6
 
   create-pkg/templates/react-app-vite-ts:
     dependencies:
