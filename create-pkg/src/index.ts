@@ -98,10 +98,6 @@ export async function scaffold({
       );
       runCommand('pkg set module="./dist/index.esm.js"');
     }
-    // ESM only
-    if (parsedFormats.length === 1) {
-      runCommand('pkg set type="module"');
-    }
   }
 
   if (parsedFormats.includes('cjs')) {
