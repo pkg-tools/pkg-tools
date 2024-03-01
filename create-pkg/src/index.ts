@@ -110,7 +110,7 @@ export async function scaffold({
         'pkg set exports["."]["require"]["types"]="./dist/index.d.cts"'
       );
       runCommand(
-        'pkg set exports["."]["import"]["require"]="./dist/index.cjs"'
+        'pkg set exports["."]["require"]["require"]="./dist/index.cjs"'
       );
       runCommand('pkg set main="./dist/index.cjs"');
     } else {
@@ -118,7 +118,7 @@ export async function scaffold({
         'pkg set exports["."]["require"]["types"]="./dist/index.d.cts"'
       );
       runCommand(
-        'pkg set exports["."]["import"]["require"]="./dist/cjs/index.cjs.js"'
+        'pkg set exports["."]["require"]["require"]="./dist/cjs/index.cjs.js"'
       );
       runCommand('pkg set main="./dist/cjs/index.cjs.js"');
     }
