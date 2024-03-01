@@ -10,6 +10,6 @@
     "rootDir": ".",
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "dist", "build.config.ts"],
+  "exclude": ["node_modules", "dist", "pkg.config.ts"],
   "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -21,22 +21,22 @@ You can specify the path to initialize the example project and the template to u
 
 ```sh
 # pnpm
-pnpm create @pkg-tools/pkg path-to-pacakge -- --template template-name
+pnpm create @pkg-tools/pkg -- --path=path-to-package --template=template-name
 
 # Yarn
-yarn create @pkg-tools/pkg path-to-pacakge -- --template template-name
+yarn create @pkg-tools/pkg -- --path=path-to-package --template=template-name
 
 # npm
-npm create @pkg-tools/pkg path-to-pacakge -- --template template-name
+npm create @pkg-tools/pkg -- --path=path-to-package --template=template-name
 ```
 
 ## Templates
 
 See the [`templates`](./templates) directory for the list of templates.
 
-- [`node-module-ts`](./templates/node-module-ts)
-- [`node-cli-ts`](./templates/node-cli-ts)
-- [`react-component-ts`](./templates/react-component-ts)
+- [`node`](./templates/node)
+- [`cli`](./templates/cli)
+- [`react`](./templates/react)
 
 ## License
 

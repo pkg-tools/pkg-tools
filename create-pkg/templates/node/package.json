@@ -1,18 +1,10 @@
 {
   "name": "node",
   "private": true,
-  "version": "0.1.0",
-  "type": "module",
+  "version": "0.0.0",
   "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      }
-    }
+    ".": {}
   },
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -21,17 +13,14 @@
     "build": "build",
     "clean": "clean",
     "dev": "build -w",
+    "stub": "build -s",
     "format": "format",
     "formatcheck": "format -c",
     "lint": "lint",
-    "test": "echo \"node-module-ts\" has no unit tests\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": ""
   },
-  "dependencies": {
-    "citty": "0.1.5",
-    "consola": "3.2.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@dopt/config": "1.1.0",
     "@pkg-tools/build": "latest",
