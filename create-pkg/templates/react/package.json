@@ -30,11 +30,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@pkg-tools/build": "workspace:*",
-    "@pkg-tools/clean": "workspace:*",
-    "@pkg-tools/config": "workspace:*",
-    "@pkg-tools/format": "workspace:*",
-    "@pkg-tools/lint": "workspace:*",
+    "@pkg-tools/build": "latest",
+    "@pkg-tools/clean": "latest",
+    "@pkg-tools/config": "latest",
+    "@pkg-tools/format": "latest",
+    "@pkg-tools/lint": "latest",
     "@types/react": "18.2.12",
     "typescript": "5.1.6"
   },

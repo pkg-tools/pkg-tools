@@ -40,7 +40,12 @@ export async function scaffold({
     return;
   }
 
-  fs.cpSync(templatePath, targetPath, { recursive: true });
+  fs.cpSync(templatePath, targetPath, {
+    recursive: true,
+    filter: (source) => {
+      return !source.includes('node_modules');
+    },
+  });
 
   consola.log('\n🚧 Installing dependencies...');
 

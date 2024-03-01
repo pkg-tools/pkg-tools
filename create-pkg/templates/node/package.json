@@ -34,11 +34,11 @@
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
-    "@pkg-tools/build": "workspace:*",
-    "@pkg-tools/clean": "workspace:*",
-    "@pkg-tools/config": "workspace:*",
-    "@pkg-tools/format": "workspace:*",
-    "@pkg-tools/lint": "workspace:*",
+    "@pkg-tools/build": "latest",
+    "@pkg-tools/clean": "latest",
+    "@pkg-tools/config": "latest",
+    "@pkg-tools/format": "latest",
+    "@pkg-tools/lint": "latest",
     "typescript": "5.3.3"
   }
 }
