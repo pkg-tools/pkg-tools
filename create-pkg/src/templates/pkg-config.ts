@@ -14,14 +14,14 @@ export default function ({
 export default defineConfig({
   build: {
     entries: ['src/index'],
-    ${sourcemap && `sourcemap: true,`}
-    ${extensions && `extensions: ${extensions}`}
+    ${sourcemap ? `sourcemap: true,` : ''}
+    ${extensions ? `extensions: '${extensions}',` : ''}
     rollup: {
       inlineDependencies: true,
-      ${cjs && `emitCJS: true,`}
+      ${cjs ? `emitCJS: true,` : ''}
       esbuild: {
         target: ['node16'],
-        ${minify && `minify: true,`}
+        ${minify ? `minify: true,` : ''}
       },
     },
     declaration: 'compatible',

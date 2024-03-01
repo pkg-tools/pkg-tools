@@ -126,13 +126,13 @@ export async function scaffold({
 
   consola.log('\n✅ All done with the install!');
 
-  consola.log('\b 🔨 Building');
+  consola.log('\n🔨 Building');
   runCommand('run build');
 
-  consola.log('\b 🚦 Linting');
+  consola.log('\n🚦 Linting');
   runCommand('run lint');
 
-  consola.log('\b 🪄 Formatting');
+  consola.log('\n🪄 Formatting');
   runCommand('run format');
 
   consola.log('\n✅ All done run package scripts powered by `pkg-tools`!');

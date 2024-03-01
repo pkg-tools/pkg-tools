@@ -26,7 +26,7 @@ export const defaults: BuildConfig = {
   entries: ["src/index"],
   extensions: "modern",
   rollup: {
-    emitCJS: true,
+    emitCJS: false,
     esbuild: {
       target: "node16",
       minify: true,
