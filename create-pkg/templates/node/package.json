@@ -21,7 +21,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@dopt/config": "1.1.0",
     "@pkg-tools/build": "latest",
     "@pkg-tools/clean": "latest",
     "@pkg-tools/config": "latest",

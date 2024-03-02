@@ -6,6 +6,8 @@ import childProcess from 'node:child_process';
 import url from 'node:url';
 import { packageManagerFromUserAgent } from './utils';
 
+import sortPackageJson from 'sort-package-json';
+
 import pkgConfigTemplate from './templates/pkg-config';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
@@ -120,7 +122,14 @@ export async function scaffold({
     }
   }
 
-  consola.log('\n✅ All done with the install!');
+  consola.log('\n🔀 Sorting the final package.json');
+
+  fs.writeFileSync(
+    path.join(targetPath, 'package.json'),
+    sortPackageJson(
+      fs.readFileSync(path.join(targetPath, 'package.json'), 'utf8')
+    )
+  );
 
   consola.log('\n🔨 Building');
   runCommand('run build');
