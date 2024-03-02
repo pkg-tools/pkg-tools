@@ -1,0 +1,34 @@
+{
+  "name": "react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {}
+  },
+  "scripts": {
+    "build": "build",
+    "clean": "clean",
+    "dev": "build -s",
+    "format": "format",
+    "formatcheck": "format -c",
+    "lint": "lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@pkg-tools/build": "latest",
+    "@pkg-tools/clean": "latest",
+    "@pkg-tools/config": "latest",
+    "@pkg-tools/format": "latest",
+    "@pkg-tools/lint": "latest",
+    "@types/react": "18.2.12",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2"
+  }
+}

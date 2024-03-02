@@ -1,13 +1,13 @@
 {
-  "name": "@pkg-tools/lint",
-  "version": "1.0.5",
+  "name": "@pkg-tools/create-pkg",
+  "version": "0.0.0",
   "private": false,
-  "description": "A utility/tool for linting packages",
+  "description": "A utility for creating packages that use pkg-tools",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
   "repository": {
     "type": "git",
     "url": "https://github.com/pkg-tools/pkg-tools.git",
-    "directory": "packages/@pkg-tools/linting"
+    "directory": "packages/@pkg-tools/create-pkg"
   },
   "license": "MIT",
   "type": "module",
@@ -22,16 +22,6 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./config": {
-      "import": {
-        "types": "./dist/config.d.mts",
-        "default": "./dist/config.mjs"
-      },
-      "require": {
-        "types": "./dist/config.d.cts",
-        "default": "./dist/config.cjs"
-      }
-    },
     "./cli": {
       "import": {
         "default": "./dist/cli.mjs"
@@ -44,6 +34,7 @@
   "bin": "./cli.js",
   "files": [
     "cli.js",
+    "templates",
     "dist"
   ],
   "scripts": {
@@ -51,32 +42,31 @@
     "build": "unbuild",
     "clean": "shx rm -rf ./dist",
     "dev": "unbuild --stub",
-    "format": "prettier --w .",
+    "format": "prettier -w .",
     "formatcheck": "prettier -c .",
     "lint": "eslint .",
     "sort": "sort-package-json",
-    "test": "echo \"@pkg-tools/lint does not require test\"; exit 0;",
+    "test": "echo \"@pkg-tools/clean does not require test\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/lint\""
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@pkg-tools/clean\""
   },
   "dependencies": {
     "@pkg-tools/utilities": "workspace:*",
-    "@types/eslint": "8.56.0",
-    "@typescript-eslint/eslint-plugin": "6.16.0",
-    "@typescript-eslint/parser": "6.16.0",
+    "sort-package-json": "2.6.0",
     "citty": "0.1.5",
     "consola": "3.2.3",
-    "defu": "6.1.3",
-    "eslint": "8.56.0",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "globby": "14.0.0"
+    "defu": "6.1.3"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.16.0",
+    "@typescript-eslint/parser": "6.16.0",
+    "@types/node": "20.10.5",
+    "eslint": "8.56.0",
+    "eslint-plugin-react": "7.33.2",
     "prettier": "3.1.1",
     "publint": "^0.2.7",
     "shx": "0.3.4",
-    "sort-package-json": "^2.6.0",
     "typescript": "5.3.3",
     "unbuild": "2.0.0"
   }

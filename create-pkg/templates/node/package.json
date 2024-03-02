@@ -1,0 +1,31 @@
+{
+  "name": "node",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {}
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "build",
+    "clean": "clean",
+    "dev": "build -w",
+    "stub": "build -s",
+    "format": "format",
+    "formatcheck": "format -c",
+    "lint": "lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@pkg-tools/build": "latest",
+    "@pkg-tools/clean": "latest",
+    "@pkg-tools/config": "latest",
+    "@pkg-tools/format": "latest",
+    "@pkg-tools/lint": "latest",
+    "typescript": "5.3.3"
+  }
+}
