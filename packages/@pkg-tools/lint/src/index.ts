@@ -23,7 +23,7 @@ async function getSourceFilePaths(
 
   const filePaths = await globby(['**/*.ts', '**/*.tsx'], {
     cwd: directory,
-    ignore: ['node_modules', ...ignorePatterns],
+    ignore: ['node_modules', 'dist', ...ignorePatterns],
     ignoreFiles: ['.*ignore'],
   });
 

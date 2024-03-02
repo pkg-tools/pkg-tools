@@ -134,34 +134,6 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.3.3)
 
-  create-pkg/react-esm:
-    dependencies:
-      react:
-        specifier: '>=17.0.2'
-        version: 18.2.0
-    devDependencies:
-      '@pkg-tools/build':
-        specifier: latest
-        version: link:../../packages/@pkg-tools/build
-      '@pkg-tools/clean':
-        specifier: latest
-        version: link:../../packages/@pkg-tools/clean
-      '@pkg-tools/config':
-        specifier: latest
-        version: link:../../packages/@pkg-tools/config
-      '@pkg-tools/format':
-        specifier: latest
-        version: link:../../packages/@pkg-tools/format
-      '@pkg-tools/lint':
-        specifier: latest
-        version: link:../../packages/@pkg-tools/lint
-      '@types/react':
-        specifier: 18.2.12
-        version: 18.2.12
-      typescript:
-        specifier: 5.1.6
-        version: 5.1.6
-
   create-pkg/templates/node:
     devDependencies:
       '@dopt/config':
