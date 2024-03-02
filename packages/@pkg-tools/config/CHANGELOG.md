@@ -1,5 +1,13 @@
 # @pkg-tools/config
 
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies [504979a]
+  - @pkg-tools/build@1.0.2
+  - @pkg-tools/lint@1.0.6
+
 ## 1.0.5
 
 ### Patch Changes
