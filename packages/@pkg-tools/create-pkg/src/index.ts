@@ -50,14 +50,17 @@ export async function scaffold({
 
   fs.cpSync(templatePath, targetPath, {
     recursive: true,
-    filter: (source) => {
-      return (
-        !source.includes('node_modules') &&
-        !source.includes('dist') &&
-        !source.includes('pkg.config.ts')
-      );
-    },
   });
+
+  fs.rmSync(path.join(targetPath, 'node_modules'), {
+    recursive: true,
+    force: true,
+  });
+  fs.rmSync(path.join(targetPath, 'dist'), {
+    recursive: true,
+    force: true,
+  });
+  fs.rmSync(path.join(targetPath, 'pkg.config.ts'));
 
   consola.log('\n🚧 Installing dependencies...');
 
