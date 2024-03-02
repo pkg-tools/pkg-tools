@@ -7,15 +7,13 @@
     ".": {}
   },
   "scripts": {
-    "👇required package scripts": "",
     "build": "build",
     "clean": "clean",
     "dev": "build -s",
     "format": "format",
     "formatcheck": "format -c",
     "lint": "lint",
-    "typecheck": "tsc --noEmit",
-    "☝️ required package scripts": ""
+    "typecheck": "tsc --noEmit"
   },
   "files": [
     "dist"
