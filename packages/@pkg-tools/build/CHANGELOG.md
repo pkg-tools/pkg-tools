@@ -1,5 +1,11 @@
 # @pkg-tools/build
 
+## 1.0.2
+
+### Patch Changes
+
+- 504979a: Create @pkg-tools/create-pkg && fix bugs while iteration on a creation experience.
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @pkg-tools/lint
 
+## 1.0.6
+
+### Patch Changes
+
+- 504979a: Create @pkg-tools/create-pkg && fix bugs while iteration on a creation experience.
+
 ## 1.0.5
 
 ### Patch Changes
