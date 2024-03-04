@@ -1,5 +1,11 @@
 # @pkg-tools/format
 
+## 1.0.5
+
+### Patch Changes
+
+- 3798de4: Ignore the yarn.lock file by defualt
+
 ## 1.0.4
 
 ### Patch Changes
