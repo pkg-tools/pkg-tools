@@ -1,5 +1,11 @@
 # @pkg-tools/create-pkg
 
+## 0.0.4
+
+### Patch Changes
+
+- 5008635: Update default template
+
 ## 0.0.3
 
 ### Patch Changes
