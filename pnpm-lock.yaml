@@ -85,6 +85,55 @@ importers:
         specifier: ^5
         version: 5.3.3
 
+  create-pkg:
+    dependencies:
+      '@pkg-tools/utilities':
+        specifier: workspace:*
+        version: link:../packages/@pkg-tools/utilities
+      citty:
+        specifier: 0.1.5
+        version: 0.1.5
+      consola:
+        specifier: 3.2.3
+        version: 3.2.3
+      defu:
+        specifier: 6.1.3
+        version: 6.1.3
+      sort-package-json:
+        specifier: 2.6.0
+        version: 2.6.0
+    devDependencies:
+      '@types/node':
+        specifier: 20.10.5
+        version: 20.10.5
+      '@typescript-eslint/eslint-plugin':
+        specifier: 6.16.0
+        version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: 6.16.0
+        version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
+      eslint:
+        specifier: 8.56.0
+        version: 8.56.0
+      eslint-plugin-react:
+        specifier: 7.33.2
+        version: 7.33.2(eslint@8.56.0)
+      prettier:
+        specifier: 3.1.1
+        version: 3.1.1
+      publint:
+        specifier: ^0.2.7
+        version: 0.2.7
+      shx:
+        specifier: 0.3.4
+        version: 0.3.4
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+      unbuild:
+        specifier: 2.0.0
+        version: 2.0.0(typescript@5.3.3)
+
   examples/node-module-cli-ts:
     dependencies:
       citty:
@@ -358,104 +407,6 @@ importers:
       unbuild:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.3.3)
-
-  packages/@pkg-tools/create-pkg:
-    dependencies:
-      '@pkg-tools/utilities':
-        specifier: workspace:*
-        version: link:../utilities
-      citty:
-        specifier: 0.1.5
-        version: 0.1.5
-      consola:
-        specifier: 3.2.3
-        version: 3.2.3
-      defu:
-        specifier: 6.1.3
-        version: 6.1.3
-      sort-package-json:
-        specifier: 2.6.0
-        version: 2.6.0
-    devDependencies:
-      '@types/node':
-        specifier: 20.10.5
-        version: 20.10.5
-      '@typescript-eslint/eslint-plugin':
-        specifier: 6.16.0
-        version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/parser':
-        specifier: 6.16.0
-        version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
-      eslint:
-        specifier: 8.56.0
-        version: 8.56.0
-      eslint-plugin-react:
-        specifier: 7.33.2
-        version: 7.33.2(eslint@8.56.0)
-      prettier:
-        specifier: 3.1.1
-        version: 3.1.1
-      publint:
-        specifier: ^0.2.7
-        version: 0.2.7
-      shx:
-        specifier: 0.3.4
-        version: 0.3.4
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
-      unbuild:
-        specifier: 2.0.0
-        version: 2.0.0(typescript@5.3.3)
-
-  packages/@pkg-tools/create-pkg/templates/node:
-    devDependencies:
-      '@pkg-tools/build':
-        specifier: latest
-        version: link:../../../build
-      '@pkg-tools/clean':
-        specifier: latest
-        version: link:../../../clean
-      '@pkg-tools/config':
-        specifier: latest
-        version: link:../../../config
-      '@pkg-tools/format':
-        specifier: latest
-        version: link:../../../format
-      '@pkg-tools/lint':
-        specifier: latest
-        version: link:../../../lint
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
-
-  packages/@pkg-tools/create-pkg/templates/react:
-    dependencies:
-      react:
-        specifier: '>=17.0.2'
-        version: 18.2.0
-    devDependencies:
-      '@pkg-tools/build':
-        specifier: latest
-        version: link:../../../build
-      '@pkg-tools/clean':
-        specifier: latest
-        version: link:../../../clean
-      '@pkg-tools/config':
-        specifier: latest
-        version: link:../../../config
-      '@pkg-tools/format':
-        specifier: latest
-        version: link:../../../format
-      '@pkg-tools/lint':
-        specifier: latest
-        version: link:../../../lint
-      '@types/react':
-        specifier: 18.2.12
-        version: 18.2.12
-      typescript:
-        specifier: 5.1.6
-        version: 5.1.6
 
   packages/@pkg-tools/format:
     dependencies:

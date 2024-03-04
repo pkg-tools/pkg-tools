@@ -1,7 +1,8 @@
 packages:
   - 'apps/**/*'
   - 'packages/**/*'
-  - 'create-pkg/**'
+  - 'create-pkg'
+  - 'create-pkg/**/*'
   - 'examples/**/*'
   - '!**/dist/**'
   - '!**/.next/**'
