@@ -39,7 +39,7 @@ async function formatFile(
 async function getSourceFilePaths(cwd: string) {
   const filePaths = await globby(['**'], {
     cwd,
-    ignore: ['**/node_modules/**', '**/dist/**'],
+    ignore: ['**/node_modules/**', '**/dist/**', 'yarn.lock'],
     ignoreFiles: ['.*ignore'],
   });
   return filePaths.map((filePath) => path.join(process.cwd(), filePath));
