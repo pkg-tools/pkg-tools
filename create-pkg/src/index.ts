@@ -24,7 +24,7 @@ export async function scaffold({
   targetPath,
   formats = 'esm',
   extensions = 'modern',
-  template = 'node-module-ts',
+  template = 'node',
 }: ScaffoldArguments) {
   const templatePath = path.resolve(__dirname, `../templates/${template}`);
 
