@@ -99,6 +99,9 @@ importers:
       defu:
         specifier: 6.1.3
         version: 6.1.3
+      pkg-types:
+        specifier: ^1.0.3
+        version: 1.0.3
       sort-package-json:
         specifier: 2.6.0
         version: 2.6.0
@@ -133,6 +136,55 @@ importers:
       unbuild:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.3.3)
+
+  create-pkg/templates/node:
+    devDependencies:
+      '@pkg-tools/build':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/lint
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
+  create-pkg/templates/react:
+    dependencies:
+      react:
+        specifier: '>=17.0.2'
+        version: 18.2.0
+    devDependencies:
+      '@pkg-tools/build':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/build
+      '@pkg-tools/clean':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/clean
+      '@pkg-tools/config':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/config
+      '@pkg-tools/format':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/format
+      '@pkg-tools/lint':
+        specifier: latest
+        version: link:../../../packages/@pkg-tools/lint
+      '@types/react':
+        specifier: 18.2.12
+        version: 18.2.12
+      typescript:
+        specifier: 5.1.6
+        version: 5.1.6
 
   examples/node-module-cli-ts:
     dependencies:
