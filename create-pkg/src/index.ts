@@ -9,6 +9,7 @@ import { packageManagerFromUserAgent } from './utils';
 import sortPackageJson from 'sort-package-json';
 
 import pkgConfigTemplate from './templates/pkg-config';
+import { PackageJson } from 'pkg-types';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -61,6 +62,7 @@ export async function scaffold({
     force: true,
   });
   fs.rmSync(path.join(targetPath, 'pkg.config.ts'));
+  fs.rmSync(path.join(targetPath, 'CHANGELOG.md'));
 
   consola.log('\n🚧 Installing dependencies...');
 
@@ -85,43 +87,35 @@ export async function scaffold({
     })
   );
 
+  const packageJson: PackageJson = JSON.parse(
+    fs.readFileSync(path.join(targetPath, 'package.json'), 'utf8')
+  );
+
+  packageJson.exports['.'] = {};
   if (parsedFormats.includes('esm')) {
+    packageJson.exports['.']['import'] = {};
     if (extensions === 'modern') {
-      runCommand(
-        'pkg set exports["."]["import"]["types"]="./dist/index.d.mts"'
-      );
-      runCommand(
-        'pkg set exports["."]["import"]["default"]="./dist/index.mjs"'
-      );
-      runCommand('pkg set module="./dist/index.mjs"');
+      packageJson.exports['.']['import']['types'] = './dist/index.d.mts';
+      packageJson.exports['.']['import']['default'] = './dist/index.mjs';
+      packageJson.module = './dist/index.mjs';
     } else {
-      runCommand(
-        'pkg set exports["."]["import"]["types"]="./dist/index.d.mts"'
-      );
-      runCommand(
-        'pkg set exports["."]["import"]["default"]="./dist/index.esm.js"'
-      );
-      runCommand('pkg set module="./dist/index.esm.js"');
+      packageJson.exports['.']['import']['types'] = './dist/index.d.mts';
+      packageJson.exports['.']['import']['default'] = './dist/index.esm.js';
+      packageJson.module = './dist/index.esm.js';
     }
   }
 
   if (parsedFormats.includes('cjs')) {
+    packageJson.exports['.']['require'] = {};
     if (extensions === 'modern') {
-      runCommand(
-        'pkg set exports["."]["require"]["types"]="./dist/index.d.cts"'
-      );
-      runCommand(
-        'pkg set exports["."]["require"]["require"]="./dist/index.cjs"'
-      );
-      runCommand('pkg set main="./dist/index.cjs"');
+      packageJson.exports['.']['require']['types'] = './dist/index.d.cts';
+      packageJson.exports['.']['require']['default'] = './dist/index.cjs';
+      packageJson.main = './dist/index.cjs';
     } else {
-      runCommand(
-        'pkg set exports["."]["require"]["types"]="./dist/index.d.cts"'
-      );
-      runCommand(
-        'pkg set exports["."]["require"]["require"]="./dist/cjs/index.cjs.js"'
-      );
-      runCommand('pkg set main="./dist/cjs/index.cjs.js"');
+      packageJson.exports['.']['require']['types'] = './dist/index.d.cts';
+      packageJson.exports['.']['require']['default'] =
+        './dist/cjs/index.cjs.js';
+      packageJson.main = './dist/cjs/index.cjs.js';
     }
   }
 
@@ -129,9 +123,7 @@ export async function scaffold({
 
   fs.writeFileSync(
     path.join(targetPath, 'package.json'),
-    sortPackageJson(
-      fs.readFileSync(path.join(targetPath, 'package.json'), 'utf8')
-    )
+    sortPackageJson(JSON.stringify(packageJson))
   );
 
   consola.log('\n🔨 Building');
