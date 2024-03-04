@@ -1,5 +1,11 @@
 # @pkg-tools/create-pkg
 
+## 0.0.3
+
+### Patch Changes
+
+- b3f4192: Stop using (pnpm|npm) pkg CLI given that Yarn doesn't implement it
+
 ## 0.0.2
 
 ### Patch Changes
