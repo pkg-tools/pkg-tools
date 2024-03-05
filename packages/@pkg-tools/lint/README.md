@@ -21,17 +21,6 @@ npm install -D @pkg-tools/lint @pkg-tools/config
 
 ```
 
-## Configuration
-
-Since @pkg-tools/lint leverage [eslint](https://eslint.org/), you'll still need to create an eslint configuration file for this to work in your editor.
-
-```js
-const { getConfig } = require('@pkg-tools/lint/config');
-module.exports = {
-  ...getConfig(),
-};
-```
-
 ## Usage
 
 In your `package.json`, you can use the exported cli `lint` in your lint script e.g.
