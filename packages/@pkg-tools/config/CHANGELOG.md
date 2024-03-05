@@ -1,5 +1,12 @@
 # @pkg-tools/config
 
+## 1.0.8
+
+### Patch Changes
+
+- Updated dependencies [a4ad59d]
+  - @pkg-tools/lint@1.0.7
+
 ## 1.0.7
 
 ### Patch Changes

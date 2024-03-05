@@ -1,6 +1,6 @@
 {
   "name": "@pkg-tools/lint",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "A utility/tool for linting packages",
   "homepage": "https://github.com/pkg-tools/pkg-tools",

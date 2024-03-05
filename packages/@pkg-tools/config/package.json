@@ -1,6 +1,6 @@
 {
   "name": "@pkg-tools/config",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "private": false,
   "description": "A unified configuration layer for pkg-tools",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
