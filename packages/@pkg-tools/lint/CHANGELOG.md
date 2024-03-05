@@ -1,5 +1,11 @@
 # @pkg-tools/lint
 
+## 1.0.7
+
+### Patch Changes
+
+- a4ad59d: Update docs for lint package
+
 ## 1.0.6
 
 ### Patch Changes
