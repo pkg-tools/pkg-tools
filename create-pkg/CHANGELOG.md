@@ -1,5 +1,11 @@
 # @pkg-tools/create-pkg
 
+## 0.0.5
+
+### Patch Changes
+
+- d266496: Update the tsconfig in the node template for the create CLI
+
 ## 0.0.4
 
 ### Patch Changes

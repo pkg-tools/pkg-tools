@@ -1,6 +1,6 @@
 {
   "name": "@pkg-tools/create-pkg",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "description": "A utility for creating packages that use pkg-tools",
   "homepage": "https://github.com/pkg-tools/pkg-tools",
