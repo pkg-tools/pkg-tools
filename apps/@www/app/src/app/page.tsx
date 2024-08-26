@@ -96,40 +96,38 @@ export default function Home() {
         </div>
         <div className={styles.section}>
           <h3 className={styles.h2}>{'>'} Getting started</h3>
-        </div>
-        <div className={styles.section}>
-          <h3>Starting fresh 🫧</h3>
-          <div className={styles.steps}>
-            <div className={styles.step}>
-              <div className={styles.code}>
-                <Code language="shell">{createPkg}</Code>
+          <div className={styles.subsection}>
+            <h4>Starting fresh 🫧</h4>
+            <div className={styles.steps}>
+              <div className={styles.step}>
+                <div className={styles.code}>
+                  <Code language="shell">{createPkg}</Code>
+                </div>
               </div>
             </div>
+            <div className={styles.helpText}><a href="https://github.com/pkg-tools/pkg-tools/tree/main/create-pkg">Read more here</a></div>
           </div>
-          <p>Read more <a href="https://github.com/pkg-tools/pkg-tools/tree/main/create-pkg">here</a></p>
-          
-
-        </div>
-        <div className={styles.section}>
-          <h3>Updating an existing 📦</h3>
-          
-          <div className={styles.steps}>
-            <div className={styles.step}>
-              <div className={styles.stepTitle}>1. Install</div>
-              <div className={styles.code}>
-                <Code language="shell">{installScript}</Code>
+          <div>
+            <h4>Updating an existing 📦</h4>
+            
+            <div className={styles.steps}>
+              <div className={styles.step}>
+                <div className={styles.stepTitle}>1. Install</div>
+                <div className={styles.code}>
+                  <Code language="shell">{installScript}</Code>
+                </div>
               </div>
-            </div>
-            <div className={styles.step}>
-              <div className={styles.stepTitle}>2. Use CLIs</div>
-              <div className={styles.code}>
-                <Code language="shell">{useClis}</Code>
+              <div className={styles.step}>
+                <div className={styles.stepTitle}>2. Use CLIs</div>
+                <div className={styles.code}>
+                  <Code language="shell">{useClis}</Code>
+                </div>
               </div>
-            </div>
-            <div className={styles.step}>
-              <div className={styles.stepTitle}>3. Configure</div>
-              <div className={styles.code}>
-                <Code language="tsx">{pkgConfig}</Code>
+              <div className={styles.step}>
+                <div className={styles.stepTitle}>3. Configure</div>
+                <div className={styles.code}>
+                  <Code language="tsx">{pkgConfig}</Code>
+                </div>
               </div>
             </div>
           </div>

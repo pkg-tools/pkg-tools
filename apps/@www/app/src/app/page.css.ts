@@ -69,7 +69,19 @@ export const steps = style({
   justifyContent: 'space-between',
   maxWidth: 'var(--max-width)',
   width: '100%',
-  padding: '18px 0'
+  padding: '8px 0'
+})
+
+export const subsection = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '4px',
+  padding: '2em 0'
+})
+
+export const helpText = style({
+  fontSize: '.75em',
+  color: "#5f5f5f"
 })
 
 export const step = style({
