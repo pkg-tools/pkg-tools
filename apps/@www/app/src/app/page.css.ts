@@ -4,7 +4,6 @@ export const main = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'start',
-  alignItems: 'center',
   padding: '6rem',
   minHeight: '100vh',
   fontFamily: 'var(--font-mono)'
@@ -103,28 +102,10 @@ export const stepTitle = style({
 
 export const footer = style({
   display: 'flex',
-  paddingTop: '4em'
+  paddingTop: '4em',
+  justifyContent: 'center'
 })
 export const byCrowProse = style({
   display: 'flex',
   gap: '8px'
 })
-
-
-/*
-
-
-
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem 0;
-}
-*/
