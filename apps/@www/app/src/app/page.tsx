@@ -1,7 +1,12 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import * as styles from "./page.css";
 
 import { Code } from "@/components";
+
+import { IconBrandGithubFilled, IconPoint } from "@tabler/icons-react";
+
+const createPkg = `npm create @pkg-tools/pkg`;
+
 
 const installScript = `npm install -D \\
   @pkg-tools/config  \\
@@ -48,8 +53,12 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <div className={styles.hero}>
-          <h1>pkg-tools</h1>
-          <p>
+          <a href="https://github.com/pkg-tools/pkg-tools">
+            <h1 className={styles.h1}>pkg-tools 
+              <IconBrandGithubFilled /> 
+            </h1>
+          </a>
+          <h2 className={styles.h2}>
             A build toolchain for{" "}
             <Image
               src="/typescript-logo.svg"
@@ -58,38 +67,78 @@ export default function Home() {
               height={18}
               priority
             />{" "}
-            projects. Configured via a single{" "}
-            <Image
-              src="/typescript-logo.svg"
-              alt="TypeScript Logo"
-              width={18}
-              height={18}
-              priority
-            />{" "}
-            file at the root of your project.
-          </p>
+            projects
+          </h2>
         </div>
       </div>
-      <div className={styles.steps}>
-        <div className={styles.step}>
-          <div className={styles.stepTitle}>1. Install</div>
-          <div className={styles.code}>
-            <Code language="shell">{installScript}</Code>
+
+      <div className={styles.content}>
+        <div className={styles.section}>
+          <div className={styles.h3}>
+            Tools are
+          </div>
+          <div className={styles.h3}>
+            <IconPoint />
+            standalone, install only what you need
+          </div>
+          <div className={styles.h3}>
+            <IconPoint />
+            configured in typescript
+          </div>
+          <div className={styles.h3}>
+            <IconPoint />
+            wrappers around best-of-breed tools
+          </div>
+          <div className={styles.h3}>
+            <IconPoint />
+            usable as a CLI or programmatically
           </div>
         </div>
-        <div className={styles.step}>
-          <div className={styles.stepTitle}>2. Use CLIs</div>
-          <div className={styles.code}>
-            <Code language="shell">{useClis}</Code>
-          </div>
+        <div className={styles.section}>
+          <h3 className={styles.h2}>{'>'} Getting started</h3>
         </div>
-        <div className={styles.step}>
-          <div className={styles.stepTitle}>3. Configure</div>
-          <div className={styles.code}>
-            <Code language="tsx">{pkgConfig}</Code>
+        <div className={styles.section}>
+          <h3>Starting fresh 🫧</h3>
+          <div className={styles.steps}>
+            <div className={styles.step}>
+              <div className={styles.code}>
+                <Code language="shell">{createPkg}</Code>
+              </div>
+            </div>
+          </div>
+          <p>Read more <a href="https://github.com/pkg-tools/pkg-tools/tree/main/create-pkg">here</a></p>
+          
+
+        </div>
+        <div className={styles.section}>
+          <h3>Updating an existing 📦</h3>
+          
+          <div className={styles.steps}>
+            <div className={styles.step}>
+              <div className={styles.stepTitle}>1. Install</div>
+              <div className={styles.code}>
+                <Code language="shell">{installScript}</Code>
+              </div>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepTitle}>2. Use CLIs</div>
+              <div className={styles.code}>
+                <Code language="shell">{useClis}</Code>
+              </div>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepTitle}>3. Configure</div>
+              <div className={styles.code}>
+                <Code language="tsx">{pkgConfig}</Code>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      
+
+
+
       <footer className={styles.footer}>
         <a
           className={styles.byCrowProse}
