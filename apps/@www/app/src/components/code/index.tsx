@@ -30,7 +30,7 @@ export function Code({
                 copy(children);
               }}
             >
-              <IconCopy />
+              <IconCopy width={16} height={16}/>
             </a>
           </div>
           {tokens.map((line, i) => (

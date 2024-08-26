@@ -1,23 +1,16 @@
 .root {
-  border-radius: 16px;
-  padding: 16px;
-  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  padding: 8px 8px 4px 8px;
   border: 1px solid var(--gray6);
   position: relative;
-  line-height: 16px;
   background: var(--lowContrast);
   white-space: pre-wrap;
-  box-shadow: rgb(0 0 0 / 10%) 0px 5px 30px -5px;
 }
 
 .controls {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.copy {
-  width: 24px;
-  height: 24px;
+  position: absolute;
+  right: 8px;
+  top: 6px;
 }
 
 .copy:hover {
