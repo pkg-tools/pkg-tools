@@ -50,8 +50,10 @@
   padding-top: 4em;
   display: flex;
 }
-.byDopt {
-  display: contents;
+
+.byCrowProse {
+  display: flex;
+  gap: 8px;
 }
 
 .description a {

@@ -92,18 +92,17 @@ export default function Home() {
       </div>
       <footer className={styles.footer}>
         <a
-          className={styles.byDopt}
-          href="https://www.dopt.com"
+          className={styles.byCrowProse}
+          href="https://www.crowprose.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          A project by{" "}
+          A project by 
           <Image
-            src="/dopt-logo.svg"
-            alt="Dopt Logo"
-            className={styles.doptLogo}
-            width={100}
-            height={24}
+            src="/crow.png"
+            alt="CrowProse Logo"
+            width={25}
+            height={23}
             priority
           />
         </a>
