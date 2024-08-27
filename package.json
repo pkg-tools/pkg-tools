@@ -13,7 +13,7 @@
     "typecheck": "turbo run typecheck --no-daemon",
     "uninstall": "pnpm -r exec rm -rf node_modules",
     "commit": "cz",
-    "release": "pnpm publish -r --access public"
+    "release": "pnpm publish -r --no-git-checks --access public"
   },
   "files": [
     "dist"
