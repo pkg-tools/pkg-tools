@@ -6,8 +6,15 @@ export const main = style({
   justifyContent: 'flex-start',
   padding: '6rem',
   minHeight: '100vh',
-  fontFamily: 'var(--font-mono)'
+  fontFamily: 'var(--font-mono)',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      padding: '3rem',
+    }
+  }
 })
+
+
 
 export const description = style({
   display: 'inherit',
@@ -37,7 +44,12 @@ export const h1 = style({
 
 export const h2 = style({
   fontSize: '2em',
-  fontWeight: 500
+  fontWeight: 500,
+  '@media': {
+    'screen and (max-width: 600px)': {
+      fontSize: '1.5rem',
+    }
+  }
 })
 
 export const h3 = style({
@@ -45,7 +57,12 @@ export const h3 = style({
   fontSize: '1.25em',
   fontWeight: 500,
   alignItems: "center",
-  gap: '6px'
+  gap: '6px',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      fontSize: '1rem',
+    }
+  }
 })
 
 export const content = style({
@@ -68,7 +85,12 @@ export const steps = style({
   justifyContent: 'space-between',
   maxWidth: 'var(--max-width)',
   width: '100%',
-  padding: '8px 0'
+  padding: '8px 0',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      flexDirection: 'column'
+    }
+  }
 })
 
 export const subsection = style({
