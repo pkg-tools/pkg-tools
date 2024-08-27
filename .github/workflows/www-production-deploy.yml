@@ -1,0 +1,43 @@
+name: WWW Production Deploy
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Version packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+
+      - name: Read .nvmrc
+        id: node_version
+        run: echo NODE_VERSION=$(cat .nvmrc) >> $GITHUB_OUTPUT
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.node_version.outputs.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: |
+          pnpm install
+
+      - name: Pull Vercel Environment Information
+        run: pnpm --filter="@www/app" exec vercel pull --yes --environment=production --token=${{ secrets.VERCEL_PKG_TOOLS_TOKEN }}
+          
+      - name: Build Project Artifacts
+        run: pnpm --filter="@www/app" exec vercel build --prod --token=${{ secrets.VERCEL_PKG_TOOLS_TOKEN }}
+
+      - name: Deploy Project Artifacts to Vercel
+        run: pnpm --filter="@www/app" exec vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_PKG_TOOLS_TOKEN }}
