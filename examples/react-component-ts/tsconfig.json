@@ -5,7 +5,9 @@
     "moduleResolution": "Bundler",
     "module": "ESNext",
     "outDir": "./dist",
-    "rootDir": "."
+    "rootDir": ".",
+    "skipLibCheck": true
+
   },
   "exclude": ["node_modules", "dist"],
   "include": ["**/*.ts", "**/*.tsx"]
