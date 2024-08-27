@@ -4,6 +4,7 @@ import { Highlight, HighlightProps, themes } from "prism-react-renderer";
 import styles from "./code.module.css";
 
 import { IconCopy } from "@tabler/icons-react";
+import {Key} from "react";
 
 export function Code({
   children,
@@ -33,13 +34,19 @@ export function Code({
               <IconCopy width={16} height={16}/>
             </a>
           </div>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={i} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
+          {tokens.map((line, i) => {
+            const { key, ...rest }  = getLineProps({ line, key: i})
+            return (
+              <div key={key as Key} {...rest}>
+                {line.map((token, k) => {
+                  const { key, ...rest }  = getTokenProps({ token, key: k })
+                  return (
+                    <span key={key as Key} {...rest} />
+                  )
+                })}
+              </div>
+            )
+          })}
         </pre>
       )}
     </Highlight>
