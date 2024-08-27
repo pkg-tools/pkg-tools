@@ -41,8 +41,6 @@ jobs:
           pnpm install
 
       - name: Pull Vercel Environment Information
-     ;
-
         run: pnpm --filter="@www/app" exec vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_PKG_TOOLS_TOKEN }}
 
       - name: Build Project Artifacts
