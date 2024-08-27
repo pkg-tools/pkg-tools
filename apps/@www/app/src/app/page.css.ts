@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 export const main = style({
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'start',
+  justifyContent: 'flex-start',
   padding: '6rem',
   minHeight: '100vh',
   fontFamily: 'var(--font-mono)'

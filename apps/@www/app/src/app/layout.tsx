@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import dynamic from 'next/dynamic'
+import {PHProvider} from "./providers";
 
 
 const PostHogPageView = dynamic(() => import('./posthog-pageview'), {
@@ -23,10 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <PostHogPageView />
-        {children}
-      </body>
+      <PHProvider>
+        <body className={inter.className}>
+          <PostHogPageView />
+          {children}
+        </body>
+      </PHProvider>
     </html>
   );
 }
