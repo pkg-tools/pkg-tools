@@ -42,4 +42,4 @@ jobs:
         run: pnpm --filter="@www/app" exec vercel build --token=${{ secrets.VERCEL_PKG_TOOLS_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
-        run: pnpm --filter="@www/app" exec vercel deploy --prebuilt --token=${{ secrets.VERCEL_PKG_TOOLS_TOKEN }}
+        run: pnpm --filter="@www/app" exec vercel deploy --token=${{ secrets.VERCEL_PKG_TOOLS_TOKEN }}
