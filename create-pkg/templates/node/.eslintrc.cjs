@@ -1,4 +1,2 @@
-const { getConfig } = require("@pkg-tools/lint/config");
-module.exports = {
-  ...getConfig(),
-};
+const { getConfig } = require('@pkg-tools/lint/config');
+module.exports = getConfig();

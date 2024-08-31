@@ -118,6 +118,19 @@ export const code = style({
   fontFamily: 'var(--font-mono)'
 })
 
+export const toolSelection = style({
+  display: 'flex',
+  gap: '1em',
+  padding: '.5em 0'
+})
+
+export const tool = style({
+  display: 'flex',
+  gap: '3px',
+  alignItems: 'center'
+})
+
+
 export const stepTitle = style({
   padding: '10px 0'
 })

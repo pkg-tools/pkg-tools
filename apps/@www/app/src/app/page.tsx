@@ -1,54 +1,87 @@
+'use client'
+
 import Image from "next/image";
 import * as styles from "./page.css";
 
 import { Code } from "@/components";
 
-import { IconBrandGithubFilled, IconPoint } from "@tabler/icons-react";
+import { IconBrandGithubFilled, IconPoint, IconBrandYarn, IconBrandPnpm, IconBrandNpm } from "@tabler/icons-react";
+import {useState} from "react";
 
 const createPkg = `npm create @pkg-tools/pkg`;
 
 
-const installScript = `npm install -D \\
+interface Tools {
+  build: boolean;
+  clean: boolean;
+  format: boolean;
+  lint: boolean;
+}
+
+
+const installScript = ({build, clean, format, lint}: Tools) => `npm install -D \\
   @pkg-tools/config  \\
-  @pkg-tools/build  \\
-  @pkg-tools/clean  \\
-  @pkg-tools/format \\
-  @pkg-tools/lint;
-`;
+  ${build ? '@pkg-tools/build  \\' : ''}
+  ${clean ?'@pkg-tools/clean  \\' : ''}
+  ${format ?'@pkg-tools/format \\' : ''}
+  ${lint ?'@pkg-tools/lint   \\' : ''}
+;\n`.replace(/^\s*\n/gm, '');
 
-const useClis = `npm pkg set  \\
-  scripts.build="build"   \\
-  scripts.clean="clean"   \\
-  scripts.dev="build -w"  \\
-  scripts.format="format" \\
-  scripts.lint="lint";
-`;
+const addFormatConfigScript = () => `
+echo "const { getConfig } = require("@pkg-tools/format/config");\n
+module.exports = getConfig();" > .prettierrc.cjs;
+`.replace(/^\s*\n/gm, '');
 
-const pkgConfig = `import { 
+const addLintConfigScript = () => `
+echo "const { getConfig } = require("@pkg-tools/lint/config");\n
+module.exports = getConfig();" > .eslintrc.cjs;
+`.replace(/^\s*\n/gm, '');
+
+const useClis = ({build, clean, format, lint}: Tools) => `npm pkg set  \\
+  ${build ?'scripts.build="build"  \\' : ''}
+  ${clean ?'scripts.clean="clean"  \\' : ''}
+  ${build ?'scripts.dev="build -w"  \\' : ''}
+  ${format ?'scripts.format="format"  \\' : ''}
+  ${lint ?'scripts.lint="lint"  \\' : ''}
+;`.replace(/^\s*\n/gm, '');
+
+const pkgConfig = ({build, clean, format, lint}: Tools) =>  `import { 
   defineConfig 
 } from "@pkg-tools/config";
 
 export default defineConfig({
+  ${build ? `
   build: {
     entries: ["src/index"],
     sourcemap: true,
-  },
+  },`: ''}
+  ${clean ? `
   clean: {
     directory: "./dist",
-  },
+  },`: ''}
+  ${format ? `
   format: {
     semi: true,
     singleQuote: true,
-  },
+  },`: ''}
+  ${lint ? `
   lint: {
     rules: {
       "no-unused-vars": 0,
     },
-  },
+  },`: ''}
 });
-`;
+`.replace(/^\s*\n/gm, '');
 
 export default function Home() {
+
+  const [packageManager, setPackageManager] = useState<'npm'|'pnpm'|'yarn'>('npm')
+
+
+  const [build, setBuild] = useState<boolean>(true)
+  const [clean, setClean] = useState<boolean>(true)
+  const [format, setFormat] = useState<boolean>(true)
+  const [lint, setLint] = useState<boolean>(true)
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -109,24 +142,64 @@ export default function Home() {
           </div>
           <div>
             <h4>Updating an existing 📦</h4>
+            <div>
+            <div className={styles.toolSelection}>
+              <div className={styles.tool}>
+                <input type="radio" id="npm" name="npm" value="npm" checked={packageManager === 'npm'} />
+                <label for="npm"><IconBrandNpm /></label>
+              </div>
+              <div className={styles.tool}>
+                <input type="radio" id="pnpm" name="pnpm" value="pnpm" checked={packageManager === 'pnpm'} />
+                <label for="npm"><IconBrandPnpm /></label>
+              </div>
+              <div className={styles.tool}>
+                <input type="radio" id="npm" name="yarn" value="yarn" checked={packageManager === 'yarn'} />
+                <label for="yarn"><IconBrandYarn /></label>
+              </div>
+            </div>
+            </div>
+            <div className={styles.toolSelection}>
+              <div className={styles.tool}>
+                <input checked={build} onClick={() => setBuild(!build)} type="checkbox" />
+                <label>build</label>
+              </div>
+              <div className={styles.tool}>
+                <input checked={clean} onClick={() => setClean(!clean)} type="checkbox" />
+                <label>clean</label>
+              </div>
+              <div className={styles.tool}>
+                <input checked={format} onClick={() => setFormat(!format)} type="checkbox" />
+                <label>format</label>
+              </div>
+              <div className={styles.tool}>
+                <input checked={lint} onClick={() => setLint(!lint)} type="checkbox" />
+                <label>lint</label>
+              </div>
+            </div>
             
             <div className={styles.steps}>
               <div className={styles.step}>
                 <div className={styles.stepTitle}>1. Install</div>
                 <div className={styles.code}>
-                  <Code language="shell">{installScript}</Code>
+                  <Code language="shell">
+                    {[
+                      installScript({ build, clean ,format, lint }),
+                      format && addFormatConfigScript(),
+                      lint && addLintConfigScript()
+                    ].filter(n => n).join('\n')}
+                  </Code>
                 </div>
               </div>
               <div className={styles.step}>
                 <div className={styles.stepTitle}>2. Use CLIs</div>
                 <div className={styles.code}>
-                  <Code language="shell">{useClis}</Code>
+                  <Code language="shell">{useClis({ build, clean ,format, lint })}</Code>
                 </div>
               </div>
               <div className={styles.step}>
                 <div className={styles.stepTitle}>3. Configure</div>
                 <div className={styles.code}>
-                  <Code language="tsx">{pkgConfig}</Code>
+                  <Code language="tsx">{pkgConfig({ build, clean ,format, lint })}</Code>
                 </div>
               </div>
             </div>
