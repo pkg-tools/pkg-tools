@@ -10,6 +10,8 @@ import {useState} from "react";
 
 const createPkg = `npm create @pkg-tools/pkg`;
 
+type PackageManager = 'npm' | 'pnpm' | 'yarn'
+
 
 interface Tools {
   build: boolean;
@@ -19,7 +21,7 @@ interface Tools {
 }
 
 
-const installScript = ({build, clean, format, lint}: Tools) => `npm install -D \\
+const installScript = ({build, clean, format, lint}: Tools, packageManager: PackageManager) => `${packageManager === 'npm' ? 'npm install -D' : packageManager === 'pnpm' ?  'pnpm add -D' : 'yarn add -D'} \\
   @pkg-tools/config  \\
   ${build ? '@pkg-tools/build  \\' : ''}
   ${clean ?'@pkg-tools/clean  \\' : ''}
@@ -145,16 +147,16 @@ export default function Home() {
             <div>
             <div className={styles.toolSelection}>
               <div className={styles.tool}>
-                <input type="radio" id="npm" name="npm" value="npm" checked={packageManager === 'npm'} />
-                <label for="npm"><IconBrandNpm /></label>
+                <input type="radio" id="npm" name="npm" value="npm" checked={packageManager === 'npm'} onClick={() => setPackageManager('npm')}/>
+                <label><IconBrandNpm /></label>
               </div>
               <div className={styles.tool}>
-                <input type="radio" id="pnpm" name="pnpm" value="pnpm" checked={packageManager === 'pnpm'} />
-                <label for="npm"><IconBrandPnpm /></label>
+                <input type="radio" id="pnpm" name="pnpm" value="pnpm" checked={packageManager === 'pnpm'} onClick={() => setPackageManager('pnpm')}/>
+                <label><IconBrandPnpm /></label>
               </div>
               <div className={styles.tool}>
-                <input type="radio" id="npm" name="yarn" value="yarn" checked={packageManager === 'yarn'} />
-                <label for="yarn"><IconBrandYarn /></label>
+                <input type="radio" id="npm" name="yarn" value="yarn" checked={packageManager === 'yarn'} onClick={() => setPackageManager('yarn')}/>
+                <label><IconBrandYarn /></label>
               </div>
             </div>
             </div>
@@ -183,7 +185,7 @@ export default function Home() {
                 <div className={styles.code}>
                   <Code language="shell">
                     {[
-                      installScript({ build, clean ,format, lint }),
+                      installScript({ build, clean ,format, lint },  packageManager ),
                       format && addFormatConfigScript(),
                       lint && addLintConfigScript()
                     ].filter(n => n).join('\n')}
